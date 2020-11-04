@@ -9,6 +9,8 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
+
+  
 //Router
 app.use("/patients",require('./Backend/Routers/PatientsRouter.js'))
 app.use("/doctors",require('./Backend/Routers/DoctorsRouter.js'))
