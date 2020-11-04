@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // this will be used for two ways binding if needed
 import { ProfileService } from './services/profile.service'; // profileService running with all components
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './PatientComponents/home-page/home-page.component';
@@ -16,7 +17,9 @@ import { HomePageDocComponent } from './DoctorComponents/home-page-doc/home-page
 import { MessagesDocComponent } from './DoctorComponents/messages/messages.component';
 import { ProfilDocComponent } from './DoctorComponents/profil/profil.component';
 import { SingInDocComponent } from './DoctorComponents/sing-in/sing-in.component';
-import { SingUpDocComponent } from './DoctorComponents/sing-up/sing-up.component'
+import { SingUpDocComponent } from './DoctorComponents/sing-up/sing-up.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HomeComponent } from './home/home.component'
 
 
 
@@ -34,11 +37,18 @@ import { SingUpDocComponent } from './DoctorComponents/sing-up/sing-up.component
     MessagesDocComponent,
     ProfilDocComponent,
     SingInDocComponent,
-    SingUpDocComponent
+    SingUpDocComponent,
+    NavBarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      { path: 'home', component: HomeComponent },
+      { path: 'doctor', component: HomePageDocComponent },
+      { path: 'patient', component: HomePageComponent }
+    ]),
   ],
   providers: [
     ProfileService

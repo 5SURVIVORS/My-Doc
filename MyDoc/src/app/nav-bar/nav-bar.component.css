@@ -1,0 +1,14 @@
+header {
+    background-color:#2b5b84 ;
+    padding: 15px;
+}
+a{
+    color : white ;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+    padding: 15px;
+}
+
+a:hover {
+    background-color:#dca900 ;
+}
