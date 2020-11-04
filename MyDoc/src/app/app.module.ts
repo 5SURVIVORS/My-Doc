@@ -5,7 +5,7 @@ import { ProfileService } from './services/profile.service';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './PatientComponents/home-page/home-page.component';
-import { SingInComponent } from './PatientComponents/sing-in/sing-in.component';
+
 import { LogInComponent } from './PatientComponents/log-in/log-in.component';
 import { ProfilComponent } from './PatientComponents/profil/profil.component';
 import { MessagesComponent } from './PatientComponents/messages/messages.component';
@@ -18,7 +18,9 @@ import { ProfilDocComponent } from './DoctorComponents/profil/profil.component';
 import { SingInDocComponent } from './DoctorComponents/sing-in/sing-in.component';
 import { SingUpDocComponent } from './DoctorComponents/sing-up/sing-up.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
+
 
 
 
@@ -26,7 +28,7 @@ import { HomeComponent } from './home/home.component'
   declarations: [
     AppComponent,
     HomePageComponent,
-    SingInComponent,
+    
     LogInComponent,
     ProfilComponent,
     MessagesComponent,
@@ -38,14 +40,16 @@ import { HomeComponent } from './home/home.component'
     SingInDocComponent,
     SingUpDocComponent,
     NavBarComponent,
-    HomeComponent
+    HomeComponent,
+    SignUpComponent,
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
       {path: 'home', component:HomeComponent},
-      {path: 'doctor', component:HomePageDocComponent},
+      {path: 'doctor', component:SingInDocComponent},
       {path: 'patient', component: HomePageComponent}
     ]),
   ],
