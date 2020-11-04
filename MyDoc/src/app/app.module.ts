@@ -2,11 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // this will be used for two ways binding if needed;
 import { ProfileService } from './services/profile.service';
+
 import {RouterModule ,Routes} from "@angular/router"
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './PatientComponents/home-page/home-page.component';
-import { SingInComponent } from './PatientComponents/sing-in/sing-in.component';
+
 import { LogInComponent } from './PatientComponents/log-in/log-in.component';
 import { ProfilComponent } from './PatientComponents/profil/profil.component';
 import { MessagesComponent } from './PatientComponents/messages/messages.component';
@@ -18,19 +19,20 @@ import { MessagesDocComponent } from './DoctorComponents/messages/messages.compo
 import { ProfilDocComponent } from './DoctorComponents/profil/profil.component';
 import { SingInDocComponent } from './DoctorComponents/sing-in/sing-in.component';
 import { SingUpDocComponent } from './DoctorComponents/sing-up/sing-up.component';
+
 import { LoginAdminComponent } from './AdminComponents/login/login.component'
 
-const appRoutes : Routes = [
-  { path: 'auth', component: LoginAdminComponent },
-  { path: 'admin', component: AdminComponent },
-  { path: '', component: LoginAdminComponent }   
-];
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HomeComponent } from './home/home.component';
+import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    SingInComponent,
+    
     LogInComponent,
     ProfilComponent,
     MessagesComponent,
@@ -41,12 +43,23 @@ const appRoutes : Routes = [
     ProfilDocComponent,
     SingInDocComponent,
     SingUpDocComponent,
-    LoginAdminComponent
+    LoginAdminComponent,
+    NavBarComponent,
+    HomeComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot([
+      {path: 'home', component:HomeComponent},
+      {path: 'doctor', component:SingInDocComponent},
+      {path: 'patient', component: HomePageComponent},
+         { path: 'auth', component: LoginAdminComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: '', component: LoginAdminComponent }
+    ]),
+
   ],
   providers: [
     ProfileService,
