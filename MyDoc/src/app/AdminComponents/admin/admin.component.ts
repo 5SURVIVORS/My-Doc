@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
   @Input() Admin: string;
+  
   constructor() { }
 
   ngOnInit(): void {
