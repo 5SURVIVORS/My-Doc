@@ -1,0 +1,4 @@
+DROP DATABASE IF EXISTS mydoc;
+CREATE DATABASE mydoc;
+USE mydoc;
+
