@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // this will be used for two ways binding if needed;
-import { ProfileService } from './services/profile.service';
+import { FormsModule } from '@angular/forms'; // this will be used for two ways binding if needed
+import { ProfileService } from './services/profile.service'; // profileService running with all components
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './PatientComponents/home-page/home-page.component';
