@@ -9,7 +9,7 @@ import { ProfileDocService } from './services/profileDoc.service';
 import { FormsModule } from '@angular/forms'; // this will be used for two ways binding if needed;
 
 
-import {RouterModule ,Routes} from "@angular/router";
+import { RouterModule, Routes } from "@angular/router";
 
 
 import { AppComponent } from './app.component';
@@ -20,7 +20,7 @@ import { ProfilComponent } from './PatientComponents/profil/profil.component';
 import { MessagesComponent } from './PatientComponents/messages/messages.component';
 import { AdminComponent } from './AdminComponents/admin/admin.component';
 import { CitiesComponent } from './PatientComponents/cities/cities.component';
-import {AuthAdminService} from './services/auth.admin.service';
+import { AuthAdminService } from './services/auth.admin.service';
 import { HomePageDocComponent } from './DoctorComponents/home-page-doc/home-page-doc.component';
 import { MessagesDocComponent } from './DoctorComponents/messages/messages.component';
 import { ProfilDocComponent } from './DoctorComponents/profil/profil.component';
@@ -34,7 +34,7 @@ import { HomeComponent } from './home/home.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -42,7 +42,7 @@ import {HttpClientModule} from '@angular/common/http';
   declarations: [
     AppComponent,
     HomePageComponent,
-    
+
     LogInComponent,
     ProfilComponent,
     MessagesComponent,
@@ -57,7 +57,7 @@ import {HttpClientModule} from '@angular/common/http';
     NavBarComponent,
     HomeComponent,
     SignUpComponent,
-    
+
   ],
   imports: [
     HttpClientModule,
@@ -75,13 +75,13 @@ import {HttpClientModule} from '@angular/common/http';
       { path: 'admin', component: AdminComponent },
     ]),
     NgbModule,
-    
+
   ],
   providers: [
     ProfileService,
     ProfileDocService,
     AuthAdminService
-   
+
   ],
   bootstrap: [AppComponent]
 })
