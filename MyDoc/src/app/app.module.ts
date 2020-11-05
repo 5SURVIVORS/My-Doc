@@ -19,7 +19,8 @@ import { ProfilDocComponent } from './DoctorComponents/profil/profil.component';
 import { SingInDocComponent } from './DoctorComponents/sing-in/sing-in.component';
 import { SingUpDocComponent } from './DoctorComponents/sing-up/sing-up.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 
 
@@ -49,6 +50,7 @@ import { HomeComponent } from './home/home.component'
       { path: 'doctor', component: HomePageDocComponent },
       { path: 'patient', component: HomePageComponent }
     ]),
+    NgbModule,
   ],
   providers: [
     ProfileService
