@@ -49,7 +49,7 @@ import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
     FormsModule,
     RouterModule.forRoot([
       {path: 'home', component:HomeComponent},
-      {path: 'doctor', component:SingInDocComponent},
+      {path: 'doctor', component:SingUpDocComponent},
       {path: 'patient', component: HomePageComponent}
     ]),
   ],
