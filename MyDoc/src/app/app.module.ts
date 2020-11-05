@@ -7,9 +7,9 @@ import { ProfileDocService } from './services/profileDoc.service';
 
 
 import { FormsModule } from '@angular/forms'; // this will be used for two ways binding if needed;
-import { ProfileService } from './services/profile.service';
 
-import {RouterModule ,Routes} from "@angular/router"
+
+import {RouterModule ,Routes} from "@angular/router";
 
 
 import { AppComponent } from './app.component';
@@ -67,8 +67,8 @@ import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
       { path: 'patient', component: HomePageComponent },
       { path: 'profileDoc', component: ProfilDocComponent },
       { path: 'profilePat', component: ProfilComponent },
-               { path: 'auth', component: LoginAdminComponent },
-          { path: 'admin', component: AdminComponent },
+      { path: 'auth', component: LoginAdminComponent },
+      { path: 'admin', component: AdminComponent },
     ]),
     NgbModule,
   ],
