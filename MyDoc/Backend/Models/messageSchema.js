@@ -1,6 +1,8 @@
 const { Model, Sequelize } = require('sequelize');
 const sequelize = require('../database/index.js')
+
 class Messages extends Model {}
+
 Messages.init({
   senderId: Sequelize.STRING,
   receiverId: Sequelize.STRING,
