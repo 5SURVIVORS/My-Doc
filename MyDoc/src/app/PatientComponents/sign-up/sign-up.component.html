@@ -1,13 +1,13 @@
 <div class="page-container">        
-    <form action="#" method="POST">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <h1>Sign Up</h1>
-        <input type="text" name="name" class="Name" placeholder="Name">
-        <input type="password" name="password" class="Address" placeholder="password">
-        <input type="text" name="email" class="Email" placeholder="Email">
-        <input type="text" name="adress" class="Adress" placeholder="Adress">
-        <input type="text" name="city" class="City" placeholder="City">
-        <input type="text" name="tele" class="Tele" placeholder="Number Phone">
-        <input type="text" name="accountBanc" class="AccountBanc" placeholder="accountBanc">
+        <input type="text" name="name" class="Name" placeholder="Name" ngModel>
+        <input type="password" name="password" class="Address" placeholder="password" ngModel>
+        <input type="text" name="email" class="Email" placeholder="Email" ngModel>
+        <input type="text" name="adress" class="Adress" placeholder="Adress"ngModel >
+        <input type="text" name="city" class="City" placeholder="City" ngModel>
+        <input type="text" name="tele" class="Tele" placeholder="Number Phone" ngModel>
+        <input type="text" name="accountBanc" class="AccountBanc" placeholder="accountBanc" ngModel>
         
         
         <button type="submit" value="Add" name="submit">Submit</button>
