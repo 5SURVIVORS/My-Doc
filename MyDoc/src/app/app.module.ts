@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // this will be used for two ways binding if needed
 import { ProfileService } from './services/profile.service'; // profileService running with all components
+import { ProfileDocService } from './services/profileDoc.service';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -55,7 +56,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
     NgbModule,
   ],
   providers: [
-    ProfileService
+    ProfileService,
+    ProfileDocService
   ],
   bootstrap: [AppComponent]
 })
