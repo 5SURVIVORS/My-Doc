@@ -6,7 +6,7 @@
     <div id="formContent">
       <form>
         <h4>hey Boss : {{ Admin }}</h4>
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" [(ngModel)]="Admin">
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
         <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
         <button type="button" class="btn btn-primary" *ngIf="!authStatus" (click)="onSignIn()">Login</button>
       </form>

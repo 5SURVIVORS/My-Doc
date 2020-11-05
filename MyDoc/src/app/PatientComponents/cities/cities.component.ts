@@ -6,10 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cities.component.css']
 })
 export class CitiesComponent implements OnInit {
+selectedCity: string = '';
+cities: any = [
+  'Tunis',
+  'Manouba',
+  'Ariana',
+  'Sousse',
+  
+];
 
-  constructor() { }
+radioChangeHandler(event:any){
+  this.selectedCity = event.target.value;
+  console.log(this.selectedCity)
+}
+  constructor() {
+
+   }
 
   ngOnInit(): void {
+    
   }
 
 }
