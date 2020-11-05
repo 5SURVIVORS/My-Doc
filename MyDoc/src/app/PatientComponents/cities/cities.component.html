@@ -2,7 +2,7 @@
 // because we gonna need it to filter from our database the category of the doctor who exist in that city    -->
 <article>
 <p>Please select your city !</p>
-</article>
+
 
 <div *ngFor="let city of cities">
     <input
@@ -12,6 +12,7 @@
     (change)="radioChangeHandler($event)">
     <i>{{city}}</i>
 </div>
-<!--cheak if the value of the selected city is appearing-->
+<!--check if the value of the selected city is appearing-->
 <p><span>You selected:</span><b>{{selectedCity}}</b></p>
-    
+<button (click)="buttonOnClick($event)">Submit</button>
+</article>
