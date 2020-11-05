@@ -34,7 +34,7 @@ import { HomeComponent } from './home/home.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
-
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -57,13 +57,17 @@ import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
     NavBarComponent,
     HomeComponent,
     SignUpComponent,
+    
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'doctor', component: HomePageDocComponent },
+      { path: 'signUpDoc', component: SingUpDocComponent },
+      { path: 'signInDoc', component: SingInDocComponent },
       { path: 'patient', component: HomePageComponent },
       { path: 'profileDoc', component: ProfilDocComponent },
       { path: 'profilePat', component: ProfilComponent },
@@ -71,11 +75,13 @@ import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
       { path: 'admin', component: AdminComponent },
     ]),
     NgbModule,
+    
   ],
   providers: [
     ProfileService,
     ProfileDocService,
     AuthAdminService
+   
   ],
   bootstrap: [AppComponent]
 })
