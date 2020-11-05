@@ -31,7 +31,7 @@ import { LoginAdminComponent } from './AdminComponents/login/login.component'
 
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
-
+import { AuthDocService } from './services/doc-auth.service'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -42,7 +42,6 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     HomePageComponent,
-
     LogInComponent,
     ProfilComponent,
     MessagesComponent,
@@ -56,11 +55,9 @@ import { HttpClientModule } from '@angular/common/http';
     LoginAdminComponent,
     NavBarComponent,
     HomeComponent,
-    SignUpComponent,
-
+    SignUpComponent
   ],
   imports: [
-    HttpClientModule,
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
@@ -72,7 +69,7 @@ import { HttpClientModule } from '@angular/common/http';
       { path: 'profileDoc', component: ProfilDocComponent },
       { path: 'profilePat', component: ProfilComponent },
       { path: 'auth', component: LoginAdminComponent },
-      { path: 'admin', component: AdminComponent },
+      { path: 'admin', component: AdminComponent }
     ]),
     NgbModule,
 
@@ -80,7 +77,9 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     ProfileService,
     ProfileDocService,
-    AuthAdminService
+    AuthAdminService,
+    AuthDocService,
+    HttpClientModule
 
   ],
   bootstrap: [AppComponent]
