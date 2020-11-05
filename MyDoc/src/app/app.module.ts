@@ -48,7 +48,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'doctor', component: HomePageDocComponent },
-      { path: 'patient', component: HomePageComponent }
+      { path: 'patient', component: HomePageComponent },
+      { path: 'profileDoc', component: ProfilDocComponent },
+      { path: 'profilePat', component: ProfilComponent }
     ]),
     NgbModule,
   ],
