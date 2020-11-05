@@ -12,4 +12,5 @@ export class SingUpDocComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }

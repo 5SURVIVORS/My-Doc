@@ -1,9 +1,29 @@
-
 <header>
-    <nav class='container'>
-        
-        <a routerLink='/home'>Home</a>
-        <a routerLink='/doctor'>Doctor</a>
-        <a routerLink='/patient'>Patient</a>
+    <nav>
+        <div class="row">
+            <div class="col">
+                <div ngbDropdown class="d-inline-block">
+                    <button class="btn btn-outline-light" id="dropdownBasic1" ngbDropdownToggle> Doctor </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <a ngbDropdownItem routerLink='/doctor'>Sign up </a>
+                        <a ngbDropdownItem routerLink='/patient'>Sign in </a>
+                        <a ngbDropdownItem routerLink='/home'> Go Back Home </a>
+
+                    </div>
+                </div>
+                <div ngbDropdown class="d-inline-block">
+                    <button class="btn btn-outline-light" id="dropdownBasic1" ngbDropdownToggle>Patient</button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <a ngbDropdownItem routerLink='/doctor'>Sign up </a>
+                        <a ngbDropdownItem routerLink='/patient'>Sign in </a>
+                        <a ngbDropdownItem routerLink='/home'> Go Back Home </a>
+
+                    </div>
+                </div>
+
+            </div>
+            
+
+        </div>
     </nav>
 </header>
