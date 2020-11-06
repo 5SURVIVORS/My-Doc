@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthPatService } from '../../services/pat-auth.service';
-import { HttpClientModule } from '@angular/common/http';
+import {NgForm} from '@angular/forms';
+
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
@@ -14,20 +15,14 @@ export class LogInComponent implements OnInit {
   }
 
   obj = {
-    values: '',
+    email: '',
     password: ''
   }
 
 
-  onKey(event: any) { // without type info  
-    this.obj.values += event.target.value
-  }
-
-  onKeyPassword(event: any) { // without type info 
-    this.obj.password = event.target.value
-  }
-
-  onChangeRouter() {
+  onChangeRouter(form: NgForm) {
+    this.obj.password = form.value['password'];
+    this.obj.email = form.value['email'];
     this.router.navigate(['profilePat'])
 
 
