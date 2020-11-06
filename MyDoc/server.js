@@ -9,7 +9,7 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-
+app.use(express.static('dist/MyDoc'))
   
 //Router
 app.use("/patients",require('./Backend/Routers/PatientsRouter.js'))

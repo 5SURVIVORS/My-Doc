@@ -1,17 +1,13 @@
 header {
     background-color:#2b5b84 ;
     padding: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-/* a{
-    color : white ;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-decoration: none;
-    padding: 15px;
-} */
 
 a:hover {
     background-color:#dca900 ;
 }
 h3{
-    color: white;
+    color: #dca900;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
