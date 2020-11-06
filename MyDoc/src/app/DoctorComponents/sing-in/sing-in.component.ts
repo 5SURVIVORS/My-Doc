@@ -22,7 +22,7 @@ export class SingInDocComponent implements OnInit {
   }
 
   onChangeRouter(form: NgForm) {
-    // this.authDoc.saveNewDoc(this.obj)
+   
     this.obj.password = form.value['password'];
     this.obj.email = form.value['email'];
     this.router.navigate(['doctor'])
