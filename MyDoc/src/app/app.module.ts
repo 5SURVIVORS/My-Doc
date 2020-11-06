@@ -35,6 +35,7 @@ import { AuthDocService } from './services/doc-auth.service'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthPatService } from './services/pat-auth.service';
 
 
 
@@ -69,7 +70,9 @@ import { HttpClientModule } from '@angular/common/http';
       { path: 'profileDoc', component: ProfilDocComponent },
       { path: 'profilePat', component: ProfilComponent },
       { path: 'auth', component: LoginAdminComponent },
-      { path: 'admin', component: AdminComponent }
+      { path: 'admin', component: AdminComponent },
+      { path: 'signUpPat', component: SignUpComponent },
+      { path: 'signInPat', component: LogInComponent }
     ]),
     NgbModule,
 
@@ -79,7 +82,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProfileDocService,
     AuthAdminService,
     AuthDocService,
-    HttpClientModule
+    HttpClientModule,
+    AuthPatService
 
   ],
   bootstrap: [AppComponent]

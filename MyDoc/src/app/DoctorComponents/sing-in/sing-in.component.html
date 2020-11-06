@@ -1,25 +1,26 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
 
- <div class="wrapper fadeInDown">
-    <div id="formContent">
-      <!-- Tabs Titles -->
-  
-      <!-- Icon -->
-      <div class="fadeIn first">
-       
-        <img src="https://www.chu-reims.fr/system/contenus/photos/000/000/177/original/docteur.png?1488976073" id="icon" alt="User Icon" />
-      </div>
-  
-      <!-- Login Form -->
-      <form >
-        <input (keyup)="onKey($event)" type="text" id="username" class="fadeIn second" name="login" placeholder="login">
-        <input (keyup)="onKeyPassword($event)" type="password" id="password" class="fadeIn third" name="login" placeholder="password">
-        <input type="submit" class="fadeIn fourth" value="Submit" (click)='onChangeRouter()'>
-      </form>
-  
-      <!-- Remind Passowrd -->
-      <div id="formFooter">
-        <a class="underlineHover" href="#">Forgot Password?</a>
-      </div>
-  
+    <!-- Icon -->
+    <div class="fadeIn first">
+
+      <img src="https://www.chu-reims.fr/system/contenus/photos/000/000/177/original/docteur.png?1488976073" id="icon"
+        alt="User Icon" />
     </div>
+
+    <!-- Login Form -->
+    <form>
+      <input (keyup)="onKey($event)" type="text" id="username" class="fadeIn second" name="login" placeholder="login">
+      <input (keyup)="onKeyPassword($event)" type="password" id="password" class="fadeIn third" name="login"
+        placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Submit" (click)='onChangeRouter()'>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
   </div>
+</div>

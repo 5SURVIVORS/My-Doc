@@ -11,18 +11,18 @@ export class AuthDocService {
   constructor(private http : HttpClient) { }
 
 
-saveNewDoc(obj) {
-this.http
-   .post('/doctors/login', obj)
-    .subscribe(
-        () => {
-          console.log('sent');
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-}
+// saveNewDoc(obj) {
+// this.http
+//    .post('/doctors/login', obj)
+//     .subscribe(
+//         () => {
+//           console.log('sent');
+//         },
+//         (error) => {
+//           console.log(error);
+//         }
+//       );
+// }
 
 
 }
