@@ -6,21 +6,13 @@ import {Subject} from  'rxjs';
 
 export class AuthDocService {
 
+
+
   constructor(private http : HttpClient) { }
 
+public docSignIn (info){
 
-// saveNewDoc(obj) {
-// this.http
-//    .post('/doctors/login', obj)
-//     .subscribe(
-//         () => {
-//           console.log('sent');
-//         },
-//         (error) => {
-//           console.log(error);
-//         }
-//       );
-// }
+  return this.http.post('/doctors/login',info)
 
-
+}
 }
