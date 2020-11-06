@@ -14,5 +14,5 @@ sequelize
     .catch(err => {
         console.error('Unable to connect to the database:', err);
     });
-    sequelize.sync();
-    module.exports = sequelize;
+sequelize.sync();
+module.exports = sequelize;
