@@ -10,9 +10,9 @@
     </div>
 
     <!-- Login Form -->
-    <form (ngSubmit)="onChangeRouter(f)" #f="ngForm">
-      <input type="text" id="username" class="fadeIn second" name="email" placeholder="login" ngModel>
-      <input  type="password" id="password" class="fadeIn third" name="password"
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <input type="text"  class="fadeIn second" name="email" placeholder="login" ngModel>
+      <input  type="password"  class="fadeIn third" name="password"
         placeholder="password" ngModel>
       <input type="submit" class="fadeIn fourth" value="Submit">
     </form>
