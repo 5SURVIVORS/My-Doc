@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthDocService } from '../../services/doc-auth.service';
 
 
+
 @Component({
   selector: 'app-sing-in-doc',
   templateUrl: './sing-in.component.html',

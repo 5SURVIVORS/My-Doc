@@ -11,6 +11,7 @@ app.use(bodyParser.json())
 
 app.use(express.static('dist/MyDoc'))
 
+
 //Router
 app.use("/patients",require('./Backend/Routers/PatientsRouter.js'))
 app.use("/doctors",require('./Backend/Routers/DoctorsRouter.js'))
