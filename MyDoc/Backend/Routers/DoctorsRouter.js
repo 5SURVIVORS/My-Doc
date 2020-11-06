@@ -48,7 +48,8 @@ router.post("/doctypes",async(req,res)=>{
 });
 
 router.post('/register', async (req, res) => {
-    
+  console.log(req.body)
+    console.log(typeof req.body)
     const { error } = registerDocValidation(req.body)
     if (error) return res.send(error.details[0].message)
     const emailExist = await Doctors.findOne({ where: { email: req.body.email } })
