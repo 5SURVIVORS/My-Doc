@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('mydoc', 'root', 'skander1998', {
+const sequelize = new Sequelize('mydoc', 'root', 'root', {
 
     host: 'localhost',
     dialect: 'mysql',
@@ -14,5 +14,5 @@ sequelize
     .catch(err => {
         console.error('Unable to connect to the database:', err);
     });
-    sequelize.sync();
-    module.exports = sequelize;
+sequelize.sync();
+module.exports = sequelize;

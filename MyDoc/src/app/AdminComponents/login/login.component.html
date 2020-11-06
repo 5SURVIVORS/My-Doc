@@ -1,17 +1,17 @@
 <div class="toolbar" role="banner">
-    <span>    Backend Office</span>
-    <div class="spacer"></div>
-  </div>
+  <span> Backend Office</span>
+  <div class="spacer"></div>
+</div>
 <div class="wrapper fadeInDown">
-    <div id="formContent">
-      <form>
-        <h4>hey Boss : {{ Admin }}</h4>
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" [(ngModel)]="Admin">
-        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-        <button type="button" class="btn btn-primary" *ngIf="!authStatus" (click)="onSignIn()">Login</button>
-      </form>
-      <div id="formFooter">
-        <a class="underlineHover">Backend Office</a>
-      </div>
+  <div id="formContent">
+    <form>
+      <h4>hey Boss : {{ Admin }}</h4>
+      <input type="text" id="login" class="fadeIn second" [(ngModel)]="Admin" name="login" placeholder="login">
+      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+      <button type="button" class="btn btn-primary" *ngIf="!authStatus" (click)="onSignIn()">Login</button>
+    </form>
+    <div id="formFooter">
+      <a class="underlineHover">Backend Office</a>
     </div>
   </div>
+</div>
