@@ -9,7 +9,7 @@ import { ProfileDocService } from './services/profileDoc.service';
 import { FormsModule } from '@angular/forms'; // this will be used for two ways binding if needed;
 
 
-import {RouterModule ,Routes} from "@angular/router";
+import { RouterModule, Routes } from "@angular/router";
 
 
 import { AppComponent } from './app.component';
@@ -20,7 +20,7 @@ import { ProfilComponent } from './PatientComponents/profil/profil.component';
 import { MessagesComponent } from './PatientComponents/messages/messages.component';
 import { AdminComponent } from './AdminComponents/admin/admin.component';
 import { CitiesComponent } from './PatientComponents/cities/cities.component';
-import {AuthAdminService} from './services/auth.admin.service';
+import { AuthAdminService } from './services/auth.admin.service';
 import { HomePageDocComponent } from './DoctorComponents/home-page-doc/home-page-doc.component';
 import { MessagesDocComponent } from './DoctorComponents/messages/messages.component';
 import { ProfilDocComponent } from './DoctorComponents/profil/profil.component';
@@ -31,10 +31,11 @@ import { LoginAdminComponent } from './AdminComponents/login/login.component'
 
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
-import {AuthDocService} from './services/doc-auth.service'
+import { AuthDocService } from './services/doc-auth.service'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthPatService } from './services/pat-auth.service';
 
 
 
@@ -55,7 +56,7 @@ import {HttpClientModule} from '@angular/common/http';
     LoginAdminComponent,
     NavBarComponent,
     HomeComponent,
-    SignUpComponent 
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -69,17 +70,21 @@ import {HttpClientModule} from '@angular/common/http';
       { path: 'profileDoc', component: ProfilDocComponent },
       { path: 'profilePat', component: ProfilComponent },
       { path: 'auth', component: LoginAdminComponent },
-      { path: 'admin', component: AdminComponent }
+      { path: 'admin', component: AdminComponent },
+      { path: 'signUpPat', component: SignUpComponent },
+      { path: 'signInPat', component: LogInComponent }
     ]),
     NgbModule,
-    
+
   ],
   providers: [
     ProfileService,
     ProfileDocService,
     AuthAdminService,
     AuthDocService,
-    HttpClientModule
+    HttpClientModule,
+    AuthPatService
+
   ],
   bootstrap: [AppComponent]
 })
