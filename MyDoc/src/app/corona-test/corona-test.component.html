@@ -1,0 +1,20 @@
+<article>
+<p>corona-test works!</p>
+<p>{{current.question}} </p>
+<div style="display: block;"  *ngFor="let answer of current.answers">
+    <input
+    type="checkbox"
+    name="one answer"
+    value="{{answer.symptom}}"
+    (change)="checkboxChangeHandler($event)">
+    <i>{{answer.answer}}</i>
+</div>
+
+<button class="btn-primary" (click)="nextClick($event)" *ngIf="nextshow" > next</button>
+<button class="btn-primary" (click)="buttonOnClick($event)"*ngIf="submitshow">Submit</button> 
+
+</article>
+
+
+
+
