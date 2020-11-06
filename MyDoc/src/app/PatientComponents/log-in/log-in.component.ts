@@ -30,7 +30,7 @@ export class LogInComponent implements OnInit {
   onChangeRouter() {
     // this.authDoc.saveNewPat(this.obj)
     this.router.navigate(['patient'])
-    console.log(this.obj)
+    console.log(this.obj, 'login modile')
 
   }
 
