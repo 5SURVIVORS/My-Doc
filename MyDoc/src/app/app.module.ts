@@ -7,7 +7,7 @@ import { ProfileDocService } from './services/profileDoc.service';
 
 
 import { FormsModule } from '@angular/forms'; // this will be used for two ways binding if needed;
-
+import {HttpClient} from '@angular/common/http'
 
 import { RouterModule, Routes } from "@angular/router";
 
