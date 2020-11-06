@@ -4,7 +4,7 @@
 <p>Please select your city !</p>
 
 
-<div *ngFor="let city of cities">
+<div  *ngFor="let city of cities">
     <input
     type="radio"
     name="one city"
@@ -13,6 +13,11 @@
     <i>{{city}}</i>
 </div>
 <!--check if the value of the selected city is appearing-->
-<p><span>You selected:</span><b>{{selectedCity}}</b></p>
-<button (click)="buttonOnClick($event)">Submit</button>
+<p class="h1"><span>You selected:</span><b>{{selectedCity}}</b></p>
+<button class="btn-primary" (click)="buttonOnClick($event)">Submit</button>
+
+<div>
+<!--mapping the doctors data from the database according to the selcted city-->
+</div>
+
 </article>
