@@ -1,8 +1,18 @@
-// static cities type boxes || buttons  warning : YOU SHOULD GET THE VALUE OF THAT CITY 
-// because we gonna need it to filter from our database the category of the doctor who exist in that city   
+<!-- // static cities type boxes || buttons  warning : YOU SHOULD GET THE VALUE OF THAT CITY 
+// because we gonna need it to filter from our database the category of the doctor who exist in that city    -->
+<article>
+<p>Please select your city !</p>
 
 
-
-
-<p>cities works!</p>
-    
+<div *ngFor="let city of cities">
+    <input
+    type="radio"
+    name="one city"
+    value="{{city}}"
+    (change)="radioChangeHandler($event)">
+    <i>{{city}}</i>
+</div>
+<!--check if the value of the selected city is appearing-->
+<p><span>You selected:</span><b>{{selectedCity}}</b></p>
+<button (click)="buttonOnClick($event)">Submit</button>
+</article>

@@ -45,6 +45,7 @@ router.post('/register', async (req, res) => {
         .then((user) => res.json(user))
         .catch((err) => console.log(err))
 })
+
 router.post('/login', async (req, res) => {
     const {error} = loginPatValidation(req.body)
     if(error) return res.send(error.details[0].message)

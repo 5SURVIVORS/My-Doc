@@ -68,7 +68,9 @@ router.post('/register', async (req, res) => {
         .then((user) => res.json(user))
         .catch((err) => console.log(err))
 })
+
 router.post('/login', async (req, res) => {
+  console.log(req.body, 'testing the server');
     const { error } = loginDocValidation(req.body)
     if (error) return res.send(error.details[0].message)
     const user = await Doctors.findOne({ where: { email: req.body.email } })
@@ -78,6 +80,8 @@ router.post('/login', async (req, res) => {
     const token = jwt.sign({ id: user.id }, process.env.SECRET_TOKEN)
     return res.status(200).header('auth_token', token).json({ id: user.id , name:user.name });
 })
+
+
 router.post('/sendemail',async (req, res) => {
    await Doctors.findAll({where:{email:req.body.email}}).then((obj) => {
       nodemailer.createTestAccount((err, email) => {

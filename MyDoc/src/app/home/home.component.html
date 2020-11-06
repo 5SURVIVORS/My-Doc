@@ -1,21 +1,100 @@
-
-<h1> hello from the home page </h1>>
-
-
-<!-- <img src = "https://i.pinimg.com/originals/26/4e/30/264e30439c42387c1e3c48d2d038429d.png"> -->
-
-
-<!-- <div class="container">
-    
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-      <span class="caret"></span></button>
-      <ul class="dropdown-menu">
-        <li><a href="#">HTML</a></li>
-        <li><a href="#">CSS</a></li>
-        <li><a href="#">JavaScript</a></li>
-      </ul>
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[0]" width=1200px height="600px" alt="Random first slide">
     </div>
-  </div> -->
+    <div class="carousel-caption">
+      <h3>Welcome !</h3>
+
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[1]" width=1200px height="600px" alt="Random second slide">
+    </div>
+
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[2]" width=1200px height="600px" alt="Random third slide">
+    </div>
+
+  </ng-template>
+</ngb-carousel>
 
 
+<p>
+  <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+    [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+    About us
+  </button>
+</p>
+
+<div id="collapseExample" [ngbCollapse]="isCollapsed">
+  <div class="card">
+    <div class="card-body">
+      HELLO ! we are My doc application , since we are living in the age of corona virus
+      you dont need to visit the doctor so you can find your doctor here
+      and you only need to contact him by searching buy city and the doctor will be near you
+
+      hope you will be satisfied and take care ;D
+
+
+    </div>
+  </div>
+</div>
+
+<footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
+  <div class="container">
+    <div class="row row-30">
+      <div class="col-md-4 col-xl-5">
+        <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light"
+              src="https://thequartzdharamshala.com/images/icons/doc.svg" alt="" width="200" height="100"
+              srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
+          <p>We are an award-winning creative application , dedicated to the best result, promotion, business
+            consulting, and marketing.</p>
+          <!-- Rights-->
+          <p class="rights"><span>©  </span><span
+              class="copyright-year">2020</span><span> </span><span>Waves</span><span>. </span><span>All Rights
+              Reserved.</span></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h5>Contacts</h5>
+        <dl class="contact-list">
+          <dt>Address:</dt>
+          <dd>Ariana </dd>
+        </dl>
+        <dl class="contact-list">
+          <dt>email:</dt>
+          <dd><a href="mailto:#">amirabourogaa0@gmail.com</a></dd>
+        </dl>
+        <dl class="contact-list">
+          <dt>phones:</dt>
+          <dd><a href="tel:#">https://karosearch.com</a> <span>or</span> <a href="tel:#">https://karosearch.com</a>
+          </dd>
+        </dl>
+      </div>
+      <div class="col-md-4 col-xl-3">
+        <h5>Links</h5>
+        <ul class="nav-list">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contacts</a></li>
+          <li><a href="#">Pricing</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row no-gutters social-container">
+    <div class="col"><a class="social-inner" href="#"><span
+          class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
+    <div class="col"><a class="social-inner" href="#"><span
+          class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>
+    <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-twitter"></span><span>twitter</span></a>
+    </div>
+    <div class="col"><a class="social-inner" href="#"><span
+          class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>
+  </div>
+</footer>

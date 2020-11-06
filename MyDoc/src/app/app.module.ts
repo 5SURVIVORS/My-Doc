@@ -7,9 +7,9 @@ import { ProfileDocService } from './services/profileDoc.service';
 
 
 import { FormsModule } from '@angular/forms'; // this will be used for two ways binding if needed;
-import { ProfileService } from './services/profile.service';
 
-import {RouterModule ,Routes} from "@angular/router"
+
+import { RouterModule, Routes } from "@angular/router";
 
 
 import { AppComponent } from './app.component';
@@ -20,7 +20,7 @@ import { ProfilComponent } from './PatientComponents/profil/profil.component';
 import { MessagesComponent } from './PatientComponents/messages/messages.component';
 import { AdminComponent } from './AdminComponents/admin/admin.component';
 import { CitiesComponent } from './PatientComponents/cities/cities.component';
-import {AuthAdminService} from './services/auth.admin.service';
+import { AuthAdminService } from './services/auth.admin.service';
 import { HomePageDocComponent } from './DoctorComponents/home-page-doc/home-page-doc.component';
 import { MessagesDocComponent } from './DoctorComponents/messages/messages.component';
 import { ProfilDocComponent } from './DoctorComponents/profil/profil.component';
@@ -31,10 +31,11 @@ import { LoginAdminComponent } from './AdminComponents/login/login.component'
 
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
-
+import { AuthDocService } from './services/doc-auth.service'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { AuthPatService } from './services/pat-auth.service';
 
 
 
@@ -42,7 +43,6 @@ import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
   declarations: [
     AppComponent,
     HomePageComponent,
-    
     LogInComponent,
     ProfilComponent,
     MessagesComponent,
@@ -56,7 +56,7 @@ import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
     LoginAdminComponent,
     NavBarComponent,
     HomeComponent,
-    SignUpComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -64,18 +64,27 @@ import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'doctor', component: HomePageDocComponent },
+      { path: 'signUpDoc', component: SingUpDocComponent },
+      { path: 'signInDoc', component: SingInDocComponent },
       { path: 'patient', component: HomePageComponent },
       { path: 'profileDoc', component: ProfilDocComponent },
       { path: 'profilePat', component: ProfilComponent },
-               { path: 'auth', component: LoginAdminComponent },
-          { path: 'admin', component: AdminComponent },
+      { path: 'auth', component: LoginAdminComponent },
+      { path: 'admin', component: AdminComponent },
+      { path: 'signUpPat', component: SignUpComponent },
+      { path: 'signInPat', component: LogInComponent }
     ]),
     NgbModule,
+
   ],
   providers: [
     ProfileService,
     ProfileDocService,
-    AuthAdminService
+    AuthAdminService,
+    AuthDocService,
+    HttpClientModule,
+    AuthPatService
+
   ],
   bootstrap: [AppComponent]
 })
