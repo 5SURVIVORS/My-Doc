@@ -1,0 +1,17 @@
+[
+    * MYDOC
+
+    * Server/ server.js
+
+    * Database/
+
+    .gitignore : node_modules
+
+    * node_modules : npm i
+]
+
+run angular ===> cd MYDOC / ng server
+
+run server / " package.json : start :  "sever": "nodemon server/server.js" === > npm run server
+
+// delete proxy from json !

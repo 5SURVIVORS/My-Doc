@@ -59,10 +59,11 @@ import { AuthPatService } from './services/pat-auth.service';
     SignUpComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: 'home', component: HomeComponent },
+      { path: '', component: HomeComponent },
       { path: 'doctor', component: HomePageDocComponent },
       { path: 'signUpDoc', component: SingUpDocComponent },
       { path: 'signInDoc', component: SingInDocComponent },
@@ -82,7 +83,7 @@ import { AuthPatService } from './services/pat-auth.service';
     ProfileDocService,
     AuthAdminService,
     AuthDocService,
-    HttpClientModule,
+    
     AuthPatService
 
   ],
