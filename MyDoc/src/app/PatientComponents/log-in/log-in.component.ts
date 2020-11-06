@@ -9,8 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class LogInComponent implements OnInit {
 
-  constructor(private router: Router) {
-    // private authPat: AuthPatService, commented it for now because of an error in the console check line 30 also **Alex 
+  constructor(private router: Router, private authPat: AuthPatService ) {
+    
   }
 
   obj = {
@@ -28,9 +28,8 @@ export class LogInComponent implements OnInit {
   }
 
   onChangeRouter() {
-    // this.authDoc.saveNewPat(this.obj)
-    this.router.navigate(['patient'])
-    console.log(this.obj, 'login modile')
+    this.router.navigate(['profilePat'])
+
 
   }
 
