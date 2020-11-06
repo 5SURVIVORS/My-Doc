@@ -18,17 +18,11 @@ export class SingInDocComponent implements OnInit {
   
 
   onKey(event: any) { // without type info
-    
     this.obj.values += event.target.value
-    
-  
   }
 
   onKeyPassword(event: any) { // without type info
-    
-    this.obj.password = event.target.value
-    
-   
+    this.obj.password = event.target.value 
   }
 
   onChangeRouter(){
