@@ -20,9 +20,12 @@ export class LogInComponent implements OnInit {
   }
 
 
-  onChangeRouter(form: NgForm) {
+  onSubmit(form: NgForm) {
     this.obj.password = form.value['password'];
     this.obj.email = form.value['email'];
+    this.authPat.patSignIn(this.obj).subscribe(doctor=>{
+      console.log(doctor, 'in submission')
+    })
     this.router.navigate(['profilePat'])
 
 
