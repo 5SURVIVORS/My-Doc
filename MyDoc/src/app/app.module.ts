@@ -34,6 +34,7 @@ import { HomeComponent } from './home/home.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
+import { CoronaTestComponent } from './corona-test/corona-test.component';
 
 
 
@@ -57,6 +58,7 @@ import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
     NavBarComponent,
     HomeComponent,
     SignUpComponent,
+    CoronaTestComponent,
   ],
   imports: [
     BrowserModule,

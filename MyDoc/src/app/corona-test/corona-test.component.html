@@ -1,0 +1,15 @@
+<article>
+<p>corona-test works!</p>
+<p>do you have any of the following symptoms </p>
+<div  *ngFor="let answer of Answers">
+    <input
+    type="checkbox"
+    name="one answer"
+    value="{{answer}}"
+    (change)="checkboxChangeHandler($event)">
+    <i>{{answer}}</i>
+</div>
+<button class="btn-primary" (click)="buttonOnClick($event)">Submit</button> 
+
+</article>
+
