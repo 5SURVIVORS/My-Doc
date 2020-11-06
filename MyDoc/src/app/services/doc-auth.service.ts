@@ -1,28 +1,18 @@
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClient} from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import {Subject} from  'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 
-export class DocAuthService {
-
-  constructor(private httpClient : HttpClientModule) { }
+export class AuthDocService {
 
 
-//   saveNewDoc(obj) {
-//     this.httpClient
-//       .post('', obj)
-//       .subscribe(
-//         () => {
-//           console.log('Enregistrement terminé !');
-//         },
-//         (error) => {
-//           console.log(error);
-//         }
-//       );
-// }
 
+  constructor(private http : HttpClient) { }
 
+public docSignIn (info){
+
+  return this.http.post('/doctors/login',info)
+
+}
 }

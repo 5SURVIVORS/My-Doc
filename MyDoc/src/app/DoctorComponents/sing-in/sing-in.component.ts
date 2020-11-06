@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
-import {Router} from '@angular/router';
+import {NgForm} from '@angular/forms'
+import { Router } from '@angular/router';
+import { AuthDocService } from '../../services/doc-auth.service';
+
 
 @Component({
   selector: 'app-sing-in-doc',
@@ -8,40 +10,34 @@ import {Router} from '@angular/router';
   styleUrls: ['./sing-in.component.css']
 })
 export class SingInDocComponent implements OnInit {
-  
-  constructor(private router : Router) {
 
-   }
+  constructor(private router: Router,private authDocService : AuthDocService) {
+    // private authDoc: AuthDocService, Commented it for now because it give us an error that will not render the component also for line 34 ** Alex
 
-  obj={values :'',
-  password:''}
-  
-
-  onKey(event: any) { // without type info
-    
-    this.obj.values += event.target.value
-    
-  
   }
 
-  onKeyPassword(event: any) { // without type info
-    
-    this.obj.password = event.target.value
-    
-   
+  obj = {
+    email: '',
+    password: ''
   }
 
-  onChangeRouter(){
-    
-    this.router.navigate(['admin'])
+  onChangeRouter(form: NgForm) {
+    // this.authDoc.saveNewDoc(this.obj)
+    this.obj.password = form.value['password'];
+    this.obj.email = form.value['email'];
+    this.router.navigate(['doctor'])
     console.log(this.obj)
-   
+    this.authDocService.docSignIn(this.obj).subscribe(doctor=>{
+      
+      console.log(doctor)
+    })
+
   }
 
   ngOnInit(): void {
   }
 
-  
-  
+
+
 
 }
