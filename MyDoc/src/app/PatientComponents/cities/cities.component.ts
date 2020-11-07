@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProfileService} from '../../services/profile.service';
 
 
 
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './cities.component.html',
   styleUrls: ['./cities.component.css']
 })
-export class CitiesComponent  {
-  
+
+export class CitiesComponent implements OnInit {
+
+
+
 selectedCity: string = '';
 cities: any = [
   'Tunis',
@@ -30,12 +34,12 @@ console.log(city)
 }
 
 
-  constructor( ) {
+
+  constructor(private profileService : ProfileService) {
 
    }
 
-   
-
+  
   ngOnInit() {
     
   }
