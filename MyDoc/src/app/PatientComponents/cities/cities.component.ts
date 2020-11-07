@@ -63,7 +63,7 @@ console.log(city)
 
 
 
-  constructor(private profileService ) {
+  constructor() {
 
    }
 
