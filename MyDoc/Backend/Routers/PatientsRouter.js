@@ -47,6 +47,7 @@ router.post('/register', async (req, res) => {
 })
 
 router.post('/login', async (req, res) => {
+    console.log(req.body);
     const {error} = loginPatValidation(req.body)
     if(error) return res.send(error.details[0].message)
     const user = await Patients.findOne({ where: {email: req.body.email}})

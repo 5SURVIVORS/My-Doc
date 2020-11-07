@@ -8,18 +8,13 @@ export class AuthPatService {
     constructor(private http: HttpClient) { }
 
 
-    // saveNewPat(obj) {
-    //     this.http
-    //         .post('/patients/login', obj)
-    //         .subscribe(
-    //             () => {
-    //                 console.log('sent');
-    //             },
-    //             (error) => {
-    //                 console.log(error);
-    //             }
-    //         );
-    // }
+    public patSignIn (info){
+        return this.http.post('http://localhost:3000/patients/login',info)
+      
+      }
+      public patSingUp(options){
+        return this.http.post('http://localhost:3000/patients/register', options)
+      }
 
 
 }

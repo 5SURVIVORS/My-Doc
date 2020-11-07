@@ -26,16 +26,17 @@ import { MessagesDocComponent } from './DoctorComponents/messages/messages.compo
 import { ProfilDocComponent } from './DoctorComponents/profil/profil.component';
 import { SingInDocComponent } from './DoctorComponents/sing-in/sing-in.component';
 import { SingUpDocComponent } from './DoctorComponents/sing-up/sing-up.component';
-
-import { LoginAdminComponent } from './AdminComponents/login/login.component'
-
+import { HttpClientModule } from '@angular/common/http'
+import { LoginAdminComponent } from './AdminComponents/login/login.component';
+import { AuthPatService } from './services/pat-auth.service';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { AuthDocService } from './services/doc-auth.service'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
-import { HttpClientModule } from '@angular/common/http';
-import { AuthPatService } from './services/pat-auth.service';
+import { CoronaTestComponent } from './corona-test/corona-test.component';
+
+
 
 
 
@@ -56,13 +57,15 @@ import { AuthPatService } from './services/pat-auth.service';
     LoginAdminComponent,
     NavBarComponent,
     HomeComponent,
-    SignUpComponent
+    SignUpComponent,
+    CoronaTestComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: 'home', component: HomeComponent },
+      { path: '', component: HomeComponent },
       { path: 'doctor', component: HomePageDocComponent },
       { path: 'signUpDoc', component: SingUpDocComponent },
       { path: 'signInDoc', component: SingInDocComponent },
@@ -71,6 +74,7 @@ import { AuthPatService } from './services/pat-auth.service';
       { path: 'profilePat', component: ProfilComponent },
       { path: 'auth', component: LoginAdminComponent },
       { path: 'admin', component: AdminComponent },
+      { path: 'corona', component: CoronaTestComponent },
       { path: 'signUpPat', component: SignUpComponent },
       { path: 'signInPat', component: LogInComponent }
     ]),
@@ -82,7 +86,7 @@ import { AuthPatService } from './services/pat-auth.service';
     ProfileDocService,
     AuthAdminService,
     AuthDocService,
-    HttpClientModule,
+    
     AuthPatService
 
   ],

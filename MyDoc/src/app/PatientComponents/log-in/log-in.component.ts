@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthPatService } from '../../services/pat-auth.service';
-import { HttpClientModule } from '@angular/common/http';
+import {NgForm} from '@angular/forms';
+
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
@@ -9,28 +10,24 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class LogInComponent implements OnInit {
 
-  constructor(private router: Router) {
-    // private authPat: AuthPatService, commented it for now because of an error in the console check line 30 also **Alex 
+  constructor(private router: Router, private authPat: AuthPatService ) {
+    
   }
 
   obj = {
-    values: '',
+    email: '',
     password: ''
   }
 
 
-  onKey(event: any) { // without type info  
-    this.obj.values += event.target.value
-  }
+  onSubmit(form: NgForm) {
+    this.obj.password = form.value['password'];
+    this.obj.email = form.value['email'];
+    this.authPat.patSignIn(this.obj).subscribe(doctor=>{
+      console.log(doctor, 'in submission')
+    })
+    this.router.navigate(['profilePat'])
 
-  onKeyPassword(event: any) { // without type info 
-    this.obj.password = event.target.value
-  }
-
-  onChangeRouter() {
-    // this.authDoc.saveNewPat(this.obj)
-    this.router.navigate(['patient'])
-    console.log(this.obj)
 
   }
 

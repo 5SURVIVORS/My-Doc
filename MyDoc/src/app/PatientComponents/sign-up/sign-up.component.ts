@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {NgForm} from '@angular/forms'
+import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
+import { AuthPatService } from '../../services/pat-auth.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,20 +10,30 @@ import {Router} from '@angular/router';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  obj = {
+    name :"",
+  password :"", 
+  email :"",
+  address : "", city : "", phoneNumber : 0, accountBanc : ""};
+
+  constructor(private router: Router, private authPat : AuthPatService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.value)
-    const name = form.value['name'];
-    const password = form.value['password'];
-    const email = form.value['email'];
-    const adress = form.value['adress'];
-    const city = form.value['city'];
-    const phone = form.value['tele']
-    const accountBanc = form.value['accountBanc'];
+    this.obj.name = form.value['name'];
+    console.log(this.obj)
+    this.obj.password = form.value['password'];
+    this.obj.email = form.value['email'];
+    this.obj.address = form.value['address'];
+    this.obj.city = form.value['city'];
+    this.obj.phoneNumber = form.value['tele']
+    this.obj.accountBanc = form.value['accountBanc'];
+    this.authPat.patSingUp(this.obj).subscribe(doctor=>{
+      console.log(doctor, 'in submission')
+    })
+    this.router.navigate(['signInPat'])
 }
 
 }
