@@ -40,8 +40,12 @@ import { CoronaTestComponent } from './corona-test/corona-test.component';
 
 
 
+
+
+
 @NgModule({
   declarations: [
+
     AppComponent,
     HomePageComponent,
     LogInComponent,
