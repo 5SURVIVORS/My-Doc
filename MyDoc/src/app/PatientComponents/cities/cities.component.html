@@ -1,10 +1,10 @@
 <!-- // static cities type boxes || buttons  warning : YOU SHOULD GET THE VALUE OF THAT CITY 
 // because we gonna need it to filter from our database the category of the doctor who exist in that city    -->
-<article>
-<p>Please select your city !</p>
+<article id='container'>
+<p><span>Please select your city !</span></p>
 
 
-<div  *ngFor="let city of cities">
+<div id='city' *ngFor="let city of cities">
     <input
     type="radio"
     name="one city"
@@ -13,13 +13,16 @@
     <i>{{city}}</i>
 </div>
 <!--check if the value of the selected city is appearing-->
-<p class="h1"><span>You selected:</span><b>{{selectedCity}}</b></p>
-<button class="btn-primary" (click)="buttonOnClick($event)">Submit</button>
+<p ><span>You selected:</span><b><span>{{selectedCity}}</span></b></p>
+<button class="btn btn-primary active" (click)="buttonOnClick($event)">Submit</button>
 
 <div>
 <!--mapping the doctors data from the database according to the selcted city-->
 </div>
 
 </article>
+
+<div style="width: 50%"><iframe width="50%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=tunis+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://www.maps.ie/route-planner.htm">Driving Route Planner</a></div>
+
 
 
