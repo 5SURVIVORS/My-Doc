@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
+import { AuthDocService } from '../../services/doc-auth.service';
 
 @Component({
   selector: 'app-sing-up-doc',
@@ -12,28 +13,29 @@ export class SingUpDocComponent implements OnInit {
 obj = {name :"",
  password :"", 
  email :"",
- adress : "", city : "", phone : 0, accountBanc : "", Patients : "", price : 0, category : "", cabineName : "", urlCertificate :""};
+ address : "", city : "", phoneNumber : 0, accountBanc : "",  price : 0, category : "", cabineName : "", urlCertificate :""};
 
-  constructor(private router: Router) { }
+  constructor(private router: Router , private authDocService : AuthDocService) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(form: NgForm) {
-    console.log(form.value)     
+  onSubmit(form: NgForm) {   
     this.obj.name = form.value['name'];
     console.log(this.obj)
     this.obj.password = form.value['password'];
     this.obj.email = form.value['email'];
-    this.obj.adress = form.value['adress'];
+    this.obj.address = form.value['address'];
     this.obj.city = form.value['city'];
-    this.obj.phone = form.value['tele']
+    this.obj.phoneNumber = form.value['tele']
     this.obj.accountBanc = form.value['accountBanc'];
     this.obj.category = form.value['category'];
     this.obj.cabineName = form.value['cabineName'];
     this.obj.urlCertificate = form.value['urlCertificate'];
-    this.obj.Patients = form.value['Patients'];
-    this.obj.price = form.value['price'];
-    this.router.navigate([''])
+    this.obj.price = Number(form.value['price']);
+    this.authDocService.docSingUp(this.obj).subscribe(doctor=>{
+      console.log(doctor, 'in submission')
+    })
+    this.router.navigate(['signInDoc'])
 }
 }

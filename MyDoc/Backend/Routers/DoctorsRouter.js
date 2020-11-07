@@ -25,7 +25,7 @@ router.get('/:id', async (req, res) => {
 })
 
 router.post("/docstate",async(req,res)=>{
-  const doctorType= await Doctors.findAll({where: { category :req.body.docType ,city:req.body.city } })
+  const doctorType= await Doctors.findAll({where: { city:req.body.city } })
   const target=doctorType
   if(!target) return res.status(400).send("No doctor found")
   if(target) return res.status(200).json(target)
@@ -48,13 +48,15 @@ router.post("/doctypes",async(req,res)=>{
 });
 
 router.post('/register', async (req, res) => {
+  console.log(req.body)
+    console.log(typeof req.body)
     const { error } = registerDocValidation(req.body)
     if (error) return res.send(error.details[0].message)
     const emailExist = await Doctors.findOne({ where: { email: req.body.email } })
     if (emailExist) return res.status(400).send('Email already exist')
     const salt = await bcrypt.genSalt(10)
     const hashpassword = await bcrypt.hash(req.body.password, salt)
-
+console.log(hashpassword)
     await Doctors.create({
         name: req.body.name,
         password: hashpassword,

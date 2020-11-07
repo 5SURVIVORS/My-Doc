@@ -1,10 +1,14 @@
+import { HttpClient } from '@angular/common/http'
+import { Injectable } from '@angular/core';
+
+
+@Injectable()
 export class ProfileDocService {
-    docProfiles = [
-        {
-            name: "example Docname",
-            Speciality: "example Speciality"
-        }
-    ]
+    docProfiles = [];
+    constructor(private http: HttpClient) { }
 
 
+    public getDoc() {
+        return this.http.get('http://localhost:3000/doctors/').subscribe((data: []) => { this.docProfiles = data });
+    }
 }

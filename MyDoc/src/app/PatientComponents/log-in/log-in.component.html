@@ -10,11 +10,11 @@
     </div>
 
     <!-- Login Form -->
-    <form>
-      <input (keyup)="onKey($event)" type="text" id="username" class="fadeIn second" name="login" placeholder="login">
-      <input (keyup)="onKeyPassword($event)" type="password" id="password" class="fadeIn third" name="login"
-        placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Submit" (click)='onChangeRouter()'>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <input type="text"  class="fadeIn second" name="email" placeholder="login" ngModel>
+      <input  type="password"  class="fadeIn third" name="password"
+        placeholder="password" ngModel>
+      <input type="submit" class="fadeIn fourth" value="Submit">
     </form>
     <!-- Remind Passowrd -->
     <div id="formFooter">
