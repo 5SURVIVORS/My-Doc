@@ -1,4 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+interface Alert {
+  type: string;
+  message: string;
+}
+
+const ALERTS: Alert[] = [{
+  type: 'success',
+  message: 'It is fairly unlikely that you have contracted the new coronavirus',
+}, {
+  type: 'warning',
+  message: 'We suggest that you book an appointment with a doctor, please sign up.',
+}, {
+  type: 'danger',
+  message: 'You should immediately contact your local authorities for a PCR test !!!!',
+}
+];
 
 @Component({
   selector: 'app-corona-test',
@@ -6,6 +22,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./corona-test.component.css']
 })
 export class CoronaTestComponent implements OnInit {
+alerts: Alert[]=[];
 result : number = 0;
 //selectedAnswer: string = '';
 answerr: boolean = true ;
@@ -127,11 +144,14 @@ this.result+= Number.parseInt (event.target.value) ;
 buttonOnClick(event:any){
   console.log(this.result);
   if (this.result === 0 ) {
-    alert('It is fairly unlikely that you have contracted the new coronavirus.');
+    this.resetGreen();
+    //alert('It is fairly unlikely that you have contracted the new coronavirus.');
   }else if (this.result <= 5 ) {
-    alert('we suggest that you book an appointment with a doctor, please sign up.');
+    this.resetWarning();
+    //alert('We suggest that you book an appointment with a doctor, please sign up.');
   }else if(this.result >5){
-    alert('You should immediately contact your local authorities for a PCR test !!!!')
+    this.resetDanger()
+    //alert('You should immediately contact your local authorities for a PCR test !!!!')
   }
   }
   
@@ -146,7 +166,22 @@ this.submitshow = true ;
 
 
 
-  constructor() { }
+  constructor() {
+   
+   }
+
+   
+
+  resetGreen() {
+    this.alerts.push(ALERTS[0]);
+  }
+  resetWarning() {
+    this.alerts.push(ALERTS[1]);
+  }
+  resetDanger() {
+    this.alerts.push(ALERTS[2]);
+  }
+
 
   ngOnInit(): void {
    this.current = this.quizz[0]

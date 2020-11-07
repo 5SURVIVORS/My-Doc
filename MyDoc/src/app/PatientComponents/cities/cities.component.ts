@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {ProfileService} from '../../services/profile.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 
 
@@ -8,12 +7,13 @@ import {ProfileService} from '../../services/profile.service';
   templateUrl: './cities.component.html',
   styleUrls: ['./cities.component.css']
 })
+export class CitiesComponent  {
+  showTunis :boolean = false ;
+  showManouba :boolean = false ;
+  showAriana :boolean = false ;
+  showSousse :boolean = false ;
+  selectedCity: string = '';
 
-export class CitiesComponent implements OnInit {
-
-
-
-selectedCity: string = '';
 cities: any = [
   'Tunis',
   'Manouba',
@@ -23,7 +23,35 @@ cities: any = [
 ];
 //function that handle the selected city in the radio and return it's value 
 radioChangeHandler(event:any){
+
   this.selectedCity = event.target.value;
+
+  if(this.selectedCity === "Tunis"){
+    this.showTunis = true ;
+    this.showManouba = false ;
+    this.showAriana = false ;
+    this.showSousse = false ;
+  }
+  
+ if (this.selectedCity==='Manouba'){
+  this.showTunis = false ;
+  this.showManouba = true ;
+  this.showAriana = false ;
+  this.showSousse = false ;
+
+  }
+   if (this.selectedCity==='Ariana'){
+    this.showTunis = false ;
+    this.showManouba = false ;
+    this.showAriana = true ;
+    this.showSousse = false ;
+  }
+ if (this.selectedCity==='Sousse'){
+  this.showTunis = false ;
+  this.showManouba = false ;
+  this.showAriana = false ;
+  this.showSousse = true ;
+  }
   console.log(this.selectedCity)
 }
 //function that should send a post request to the server
@@ -35,7 +63,7 @@ console.log(city)
 
 
 
-  constructor(private profileService : ProfileService) {
+  constructor(private profileService ) {
 
    }
 
