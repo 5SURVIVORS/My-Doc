@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import {ProfileService} from '../../services/profile.service';
 
+
+
 @Component({
   selector: 'app-cities',
   templateUrl: './cities.component.html',
   styleUrls: ['./cities.component.css']
 })
+
 export class CitiesComponent implements OnInit {
+
 
 
 selectedCity: string = '';
@@ -30,11 +34,13 @@ console.log(city)
 }
 
 
+
   constructor(private profileService : ProfileService) {
 
    }
 
-  ngOnInit(): void {
+  
+  ngOnInit() {
     
   }
 
