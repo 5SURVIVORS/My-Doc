@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-cities',
   templateUrl: './cities.component.html',
   styleUrls: ['./cities.component.css']
 })
-export class CitiesComponent implements OnInit {
+export class CitiesComponent  {
+  
 selectedCity: string = '';
 cities: any = [
   'Tunis',
@@ -27,11 +30,13 @@ console.log(city)
 }
 
 
-  constructor() {
+  constructor( ) {
 
    }
 
-  ngOnInit(): void {
+   
+
+  ngOnInit() {
     
   }
 

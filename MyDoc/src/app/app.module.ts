@@ -39,8 +39,12 @@ import { AuthPatService } from './services/pat-auth.service';
 
 
 
+
+
+
 @NgModule({
   declarations: [
+
     AppComponent,
     HomePageComponent,
     LogInComponent,
@@ -59,6 +63,7 @@ import { AuthPatService } from './services/pat-auth.service';
     SignUpComponent
   ],
   imports: [
+    
     HttpClientModule,
     BrowserModule,
     FormsModule,
