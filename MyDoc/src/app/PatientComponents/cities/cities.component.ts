@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProfileService} from '../../services/profile.service';
 
 @Component({
   selector: 'app-cities',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cities.component.css']
 })
 export class CitiesComponent implements OnInit {
+
+
 selectedCity: string = '';
 cities: any = [
   'Tunis',
@@ -27,7 +30,7 @@ console.log(city)
 }
 
 
-  constructor() {
+  constructor(private profileService : ProfileService) {
 
    }
 
