@@ -83,7 +83,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
       { path: 'corona', component: CoronaTestComponent },
       { path: 'signUpPat', component: SignUpComponent },
       { path: 'signInPat', component: LogInComponent },
-      { path: 'teem', component: AboutUsComponent }
+      { path: 'teem', component: AboutUsComponent },
+      { path: 'admin', component: AdminComponent },
     ]),
     NgbModule,
 
