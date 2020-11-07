@@ -62,12 +62,12 @@ console.log(city)
 }
 
 
-  constructor( ) {
+
+  constructor(private profileService ) {
 
    }
 
-   
-
+  
   ngOnInit() {
     
   }

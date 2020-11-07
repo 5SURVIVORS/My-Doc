@@ -23,7 +23,6 @@ export class SingInDocComponent implements OnInit {
   }
 
   onChangeRouter(form: NgForm) {
-   
     this.obj.password = form.value['password'];
     this.obj.email = form.value['email'];
     this.router.navigate(['doctor'])

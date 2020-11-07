@@ -65,7 +65,6 @@ import { CoronaTestComponent } from './corona-test/corona-test.component';
     CoronaTestComponent,
   ],
   imports: [
-    
     HttpClientModule,
     BrowserModule,
     FormsModule,
