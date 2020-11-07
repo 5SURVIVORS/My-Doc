@@ -64,7 +64,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     HomeComponent,
     SignUpComponent,
     CoronaTestComponent,
-    AboutUsComponent,
+    AboutUsComponent
   ],
   imports: [
     HttpClientModule,

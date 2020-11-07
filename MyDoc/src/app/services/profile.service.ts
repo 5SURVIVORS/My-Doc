@@ -15,7 +15,7 @@ export class ProfileService {
     constructor(private http: HttpClient) { }
 
     public getDoc(obj) {
-        return this.http.post('http://localhost:3000/doctors/docstatet', obj).subscribe((data: []) => { this.docByCity = data });
+        return this.http.post('http://localhost:3000/doctors/docstate', obj)
     }
 
 
