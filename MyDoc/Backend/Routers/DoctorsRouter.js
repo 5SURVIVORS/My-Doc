@@ -25,6 +25,7 @@ router.get('/:id', async (req, res) => {
 })
 
 router.post("/docstate",async(req,res)=>{
+  console.log(req.body)
   const doctorType= await Doctors.findAll({where: { city:req.body.city } })
   const target=doctorType
   if(!target) return res.status(400).send("No doctor found")
