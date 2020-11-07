@@ -8,6 +8,7 @@ import {ProfileService} from '../../services/profile.service'
   styleUrls: ['./cities.component.css']
 })
 export class CitiesComponent  {
+
   showTunis :boolean = false ;
   showManouba :boolean = false ;
   showAriana :boolean = false ;
@@ -62,7 +63,9 @@ radioChangeHandler(event:any){
 
 
 
+
   constructor( private router: Router, private profileService: ProfileService) {
+
 
    }
 
