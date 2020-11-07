@@ -35,6 +35,7 @@ import { AuthDocService } from './services/doc-auth.service'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
 import { CoronaTestComponent } from './corona-test/corona-test.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 
@@ -62,7 +63,8 @@ import { CoronaTestComponent } from './corona-test/corona-test.component';
     NavBarComponent,
     HomeComponent,
     SignUpComponent,
-    CoronaTestComponent
+    CoronaTestComponent,
+    AboutUsComponent
   ],
   imports: [
     HttpClientModule,
@@ -78,9 +80,10 @@ import { CoronaTestComponent } from './corona-test/corona-test.component';
       { path: 'profilePat', component: ProfilComponent },
       { path: 'auth', component: LoginAdminComponent },
       { path: 'admin', component: AdminComponent },
-      { path: 'coronaPat', component: CoronaTestComponent },
+      { path: 'corona', component: CoronaTestComponent },
       { path: 'signUpPat', component: SignUpComponent },
-      { path: 'signInPat', component: LogInComponent }
+      { path: 'signInPat', component: LogInComponent },
+      { path: 'teem', component: AboutUsComponent }
     ]),
     NgbModule,
 
