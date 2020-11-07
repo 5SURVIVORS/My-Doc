@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-
-
+import {Router} from '@angular/router';
+import {ProfileService} from '../../services/profile.service'
 
 @Component({
   selector: 'app-cities',
@@ -21,6 +21,9 @@ cities: any = [
   'Sousse',
   
 ];
+
+obj = {city : ""}
+Doc:any;
 //function that handle the selected city in the radio and return it's value 
 radioChangeHandler(event:any){
 
@@ -55,19 +58,26 @@ radioChangeHandler(event:any){
   console.log(this.selectedCity)
 }
 //function that should send a post request to the server
-buttonOnClick(event:any){
-console.log('button clicked !');
-let city = this.selectedCity
-console.log(city)
-}
 
 
 
-  constructor(private profileService ) {
+
+  constructor( private router: Router, private profileService: ProfileService) {
 
    }
 
-  
+   buttonOnClick(event:any){
+    console.log('button clicked !');
+    let city = this.selectedCity;
+    this.obj.city = this.selectedCity
+    console.log(city)
+    
+    this.profileService.getDoc(this.obj).subscribe(data => {this.Doc = data} )
+    console.log(this.Doc)
+      
+   }
+
+
   ngOnInit() {
     
   }

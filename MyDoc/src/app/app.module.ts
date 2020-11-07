@@ -62,7 +62,7 @@ import { CoronaTestComponent } from './corona-test/corona-test.component';
     NavBarComponent,
     HomeComponent,
     SignUpComponent,
-    CoronaTestComponent,
+    CoronaTestComponent
   ],
   imports: [
     HttpClientModule,
