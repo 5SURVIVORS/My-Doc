@@ -79,7 +79,7 @@ import { CoronaTestComponent } from './corona-test/corona-test.component';
       { path: 'profilePat', component: ProfilComponent },
       { path: 'auth', component: LoginAdminComponent },
       { path: 'admin', component: AdminComponent },
-      { path: 'corona', component: CoronaTestComponent },
+      { path: 'coronaPat', component: CoronaTestComponent },
       { path: 'signUpPat', component: SignUpComponent },
       { path: 'signInPat', component: LogInComponent }
     ]),
