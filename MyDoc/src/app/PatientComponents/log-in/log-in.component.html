@@ -1,8 +1,25 @@
-// Log In post request to check if that user exist or no !
-// two type of inputs 1-email 2-password 
-// root ==== /patients/login type rquest ==== post.
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
 
+    <!-- Icon -->
+    <div class="fadeIn first">
 
---> AMIRA -->
+      <img src="https://www.chu-reims.fr/system/contenus/photos/000/000/089/original/patient.png?1488976140" id="icon"
+        alt="User Icon" />
+    </div>
 
-<p>log-in works!</p>
+    <!-- Login Form -->
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <input type="text"  class="fadeIn second" name="email" placeholder="login" ngModel>
+      <input  type="password"  class="fadeIn third" name="password"
+        placeholder="password" ngModel>
+      <input type="submit" class="fadeIn fourth" value="Submit">
+    </form>
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>

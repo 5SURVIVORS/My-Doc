@@ -1,0 +1,35 @@
+<header>
+    <nav>
+        <div class="row">&nbsp; &nbsp;
+            <img width="40" alt="Angular Logo"
+                src="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/e6/c3/d1/e6c3d151-3c8c-2ae8-41e5-fc4f0d7fa674/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-5.png/400x400.png" />&nbsp;&nbsp;
+            <h3> {{ title }}</h3>
+            <div class="col">
+                <div ngbDropdown class="d-inline-block">
+                    <button class="btn btn-outline-light" id="dropdownBasic1" ngbDropdownToggle> Doctor </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <a ngbDropdownItem routerLink='/signUpDoc'>Sign up </a>
+                        <a ngbDropdownItem routerLink='/signInDoc'>Log in </a>
+                        <a ngbDropdownItem routerLink=''> Go Back Home </a>
+
+                    </div>
+                </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <div ngbDropdown class="d-inline-block">
+                    <button class="btn btn-outline-light" id="dropdownBasic1" ngbDropdownToggle>Patient</button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <a ngbDropdownItem routerLink='/signUpPat'>Sign up </a>
+                        <a ngbDropdownItem routerLink='/signInPat'>Log in </a>
+                        <a ngbDropdownItem routerLink='/corona'>Corona check </a>
+                        <a ngbDropdownItem routerLink=''> Go Back Home </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </nav>
+    <!-- <a ngbDropdownItem routerLink='/doctor'>Sign up </a>
+    <a ngbDropdownItem routerLink='/patient'>Sign in </a>
+    <a ngbDropdownItem routerLink='/home'> Go Back Home </a> -->
+</header>

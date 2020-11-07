@@ -23,12 +23,15 @@ router.get('/:id', async (req, res) => {
     .catch((err) => console.log(err))
 
 })
+
 router.post("/docstate",async(req,res)=>{
   const doctorType= await Doctors.findAll({where: { category :req.body.docType ,city:req.body.city } })
   const target=doctorType
   if(!target) return res.status(400).send("No doctor found")
   if(target) return res.status(200).json(target)
 });
+
+
 router.post("/docId",async(req,res)=>{
   const doctor= await Doctors.findOne({where: { id :req.body.docId } })
   const id=doctor
@@ -45,13 +48,15 @@ router.post("/doctypes",async(req,res)=>{
 });
 
 router.post('/register', async (req, res) => {
+  console.log(req.body)
+    console.log(typeof req.body)
     const { error } = registerDocValidation(req.body)
     if (error) return res.send(error.details[0].message)
     const emailExist = await Doctors.findOne({ where: { email: req.body.email } })
     if (emailExist) return res.status(400).send('Email already exist')
     const salt = await bcrypt.genSalt(10)
     const hashpassword = await bcrypt.hash(req.body.password, salt)
-
+console.log(hashpassword)
     await Doctors.create({
         name: req.body.name,
         password: hashpassword,
@@ -68,7 +73,9 @@ router.post('/register', async (req, res) => {
         .then((user) => res.json(user))
         .catch((err) => console.log(err))
 })
+
 router.post('/login', async (req, res) => {
+  console.log(req.body, 'testing the server');
     const { error } = loginDocValidation(req.body)
     if (error) return res.send(error.details[0].message)
     const user = await Doctors.findOne({ where: { email: req.body.email } })
@@ -78,6 +85,8 @@ router.post('/login', async (req, res) => {
     const token = jwt.sign({ id: user.id }, process.env.SECRET_TOKEN)
     return res.status(200).header('auth_token', token).json({ id: user.id , name:user.name });
 })
+
+
 router.post('/sendemail',async (req, res) => {
    await Doctors.findAll({where:{email:req.body.email}}).then((obj) => {
       nodemailer.createTestAccount((err, email) => {

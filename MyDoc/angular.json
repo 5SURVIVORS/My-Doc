@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "../MyDoc/node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "MyDoc"
+    }
+  },
+  "defaultProject": "MyDoc",
+  "cli": {
+    "analytics": "ab6945c3-726d-4fb4-95d2-c3c097551410"
+  }
 }

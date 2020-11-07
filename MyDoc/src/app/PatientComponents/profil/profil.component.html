@@ -1,7 +1,20 @@
-// render informations of the user 
-// appointment render 
+<p>profil Patient works!</p>
+A typeahead example that gets values from a static <code>string[]</code>
+<ul>
+    <li><code>debounceTime</code> operator</li>
+    <li>kicks in only if 2+ characters typed</li>
+    <li>limits to 10 results</li>
+</ul>
 
-// NAVBAR : messages , Book an oppoinment ${dropDown} = type of doctors 
+<label for="typeahead-basic">Search for a state:</label>
+<input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" />
+<hr>
+<pre>Model: {{ model | json }}</pre>
 
---> Alex -->
-<p>profil works!</p>
+<app-cities></app-cities>
+<!-- render informations of the user 
+ appointment render 
+
+ NAVBAR : messages , Book an oppoinment ${dropDown} = type of doctors 
+
+ Alex  -->

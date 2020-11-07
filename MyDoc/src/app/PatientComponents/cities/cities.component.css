@@ -1,0 +1,14 @@
+#city,#title, span{
+    font-size: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: oblique;
+    
+    color: #2b5b84;
+    /* margin-top: 200px; */
+   
+}
+#container{
+    width: 500px;
+    height:450px;
+    
+}

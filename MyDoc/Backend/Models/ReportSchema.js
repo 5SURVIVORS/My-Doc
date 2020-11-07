@@ -13,3 +13,4 @@ Reports.init({
   primaryDiagnosis : Sequelize.STRING,
 }, { sequelize , modelName: 'reports' });
 module.exports = Reports ;
+  
