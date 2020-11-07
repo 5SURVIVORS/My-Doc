@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ProfileDocService } from 'src/app/services/profileDoc.service'
 
 @Component({
   selector: 'app-admin',
@@ -7,10 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
   @Input() Admin: string;
+  docData : any = [] ;
+
   
-  constructor() { }
+  constructor(private profileDoc: ProfileDocService) {}
 
   ngOnInit(): void {
+    this.docData = this.profileDoc.getDoc()
   }
-
 }

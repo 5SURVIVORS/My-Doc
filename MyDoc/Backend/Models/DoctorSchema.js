@@ -11,7 +11,7 @@ Doctors.init({
   category : Sequelize.STRING,
   cabineName : Sequelize.STRING,
   urlCertificate : Sequelize.STRING,
-  // patients : Sequelize.INTEGER,
+  //views : Sequelize.INTEGER,
   accountBanc: Sequelize.STRING ,
   price: Sequelize.INTEGER ,
 }, { sequelize , modelName: 'doctors' });
