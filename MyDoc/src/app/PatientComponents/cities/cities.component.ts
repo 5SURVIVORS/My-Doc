@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./cities.component.css']
 })
 export class CitiesComponent  {
+
   showTunis :boolean = false ;
   showManouba :boolean = false ;
   showAriana :boolean = false ;
@@ -63,7 +64,7 @@ console.log(city)
 
 
 
-  constructor(private profileService ) {
+  constructor( ) {
 
    }
 
