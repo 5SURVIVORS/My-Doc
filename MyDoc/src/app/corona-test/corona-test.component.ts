@@ -22,6 +22,7 @@ const ALERTS: Alert[] = [{
   styleUrls: ['./corona-test.component.css']
 })
 export class CoronaTestComponent implements OnInit {
+ 
 alerts: Alert[]=[];
 result : number = 0;
 //selectedAnswer: string = '';
@@ -158,8 +159,9 @@ buttonOnClick(event:any){
 nextClick(event:any){
   this.stage++ ; 
   if (this.stage===this.quizz.length-1) {
-this.nextshow = false ;
-this.submitshow = true ;
+  this.nextshow = false ;
+  this.submitshow = true ;
+  
   }
   this.current = this.quizz[this.stage] ;
 }
