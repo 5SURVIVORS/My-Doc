@@ -72,10 +72,10 @@ import { AdminViewComponent } from './AdminComponents/admin-view/admin-view.comp
     SignUpComponent,
     CoronaTestComponent,
     AboutUsComponent,
-   CoronaComponent
+    CoronaComponent,
     FilterCityComponent,
     LoopComponent,
-    AdminViewComponent
+    AdminViewComponent,
   ],
   imports: [
     HttpClientModule,
@@ -95,7 +95,8 @@ import { AdminViewComponent } from './AdminComponents/admin-view/admin-view.comp
       { path: 'signUpPat', component: SignUpComponent },
       { path: 'signInPat', component: LogInComponent },
       { path: 'teem', component: AboutUsComponent },
-      {path :'filter', component: FilterCityComponent }
+      { path: 'filter', component: FilterCityComponent },
+      { path: 'cities', component: CitiesComponent }
 
     ]),
     NgbModule,
