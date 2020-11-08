@@ -19,6 +19,7 @@ location : Object ;
   showSousse :boolean = false ;
   selectedCity: string = '';
 
+
 cities: any = [
   'Tunis',
   'Manouba',
