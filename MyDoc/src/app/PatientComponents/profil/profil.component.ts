@@ -10,12 +10,26 @@ import { Observable } from 'rxjs';
 })
 export class ProfilComponent implements OnInit {
   profiles: any[];
+  Info;
+  Category;
+  City;
 
   constructor(private profileService: ProfileService) { }
   ngOnInit(): void {
     this.profiles = this.profileService.profiles;
   }
+  onSearchCategory(event) {
+    this.Category = event.target.value;
+  }
+  onSearchCity(event) {
+    this.City = event.target.value;
+  }
 
+  onCl() {
+    this.profileService.getDocByCategory({ docType: this.Category, city: this.City }).subscribe((doc) => { this.Info = doc; }
+    )
+    console.log(this.Info)
+  }
 
 
 }

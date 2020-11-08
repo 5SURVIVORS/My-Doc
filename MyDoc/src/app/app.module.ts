@@ -13,7 +13,6 @@ import { RouterModule, Routes } from "@angular/router";
 
 
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './PatientComponents/home-page/home-page.component';
 
 import { LogInComponent } from './PatientComponents/log-in/log-in.component';
 import { ProfilComponent } from './PatientComponents/profil/profil.component';
@@ -57,7 +56,6 @@ import {AgmCoreModule} from '@agm/core';
   declarations: [
 
     AppComponent,
-    HomePageComponent,
     LogInComponent,
     ProfilComponent,
     MessagesComponent,
@@ -74,11 +72,10 @@ import {AgmCoreModule} from '@agm/core';
     SignUpComponent,
     CoronaTestComponent,
     AboutUsComponent,
-   CoronaComponent,
+    CoronaComponent,
     FilterCityComponent,
     LoopComponent,
-    AdminViewComponent,
-   
+    AdminViewComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -92,7 +89,6 @@ import {AgmCoreModule} from '@agm/core';
       { path: 'doctor', component: HomePageDocComponent },
       { path: 'signUpDoc', component: SingUpDocComponent },
       { path: 'signInDoc', component: SingInDocComponent },
-      { path: 'patient', component: HomePageComponent },
       { path: 'profileDoc', component: ProfilDocComponent },
       { path: 'profilePat', component: ProfilComponent },
       { path: 'auth', component: LoginAdminComponent },
@@ -101,9 +97,8 @@ import {AgmCoreModule} from '@agm/core';
       { path: 'signUpPat', component: SignUpComponent },
       { path: 'signInPat', component: LogInComponent },
       { path: 'teem', component: AboutUsComponent },
-      {path :'cities', component: CitiesComponent },
-      {path :'filter', component: FilterCityComponent }
-
+      { path: 'filter', component: FilterCityComponent },
+      { path: 'cities', component: CitiesComponent }
 
     ]),
     NgbModule,
