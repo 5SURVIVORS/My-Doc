@@ -35,6 +35,11 @@ import { AuthDocService } from './services/doc-auth.service'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
 import { CoronaTestComponent } from './corona-test/corona-test.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { CoronaComponent } from './corona/corona.component';
+
+
+
 
 
 
@@ -42,6 +47,7 @@ import { CoronaTestComponent } from './corona-test/corona-test.component';
 
 @NgModule({
   declarations: [
+
     AppComponent,
     HomePageComponent,
     LogInComponent,
@@ -59,6 +65,8 @@ import { CoronaTestComponent } from './corona-test/corona-test.component';
     HomeComponent,
     SignUpComponent,
     CoronaTestComponent,
+    AboutUsComponent,
+    CoronaComponent
   ],
   imports: [
     HttpClientModule,
@@ -76,7 +84,9 @@ import { CoronaTestComponent } from './corona-test/corona-test.component';
       { path: 'admin', component: AdminComponent },
       { path: 'corona', component: CoronaTestComponent },
       { path: 'signUpPat', component: SignUpComponent },
-      { path: 'signInPat', component: LogInComponent }
+      { path: 'signInPat', component: LogInComponent },
+      { path: 'teem', component: AboutUsComponent },
+      { path: 'admin', component: AdminComponent },
     ]),
     NgbModule,
 

@@ -33,7 +33,7 @@ export class ProfilDocComponent implements OnInit {
     const doc = this.fetchDocs()
     setTimeout(
       () => {
-        resolve(JSON.stringify(this.profileDoc.docProfiles[0].name));
+        resolve(this.profileDoc.docProfiles[0].name);
       }, 2000
     );;
   });
@@ -44,6 +44,7 @@ export class ProfilDocComponent implements OnInit {
         this.isAuth = true;
       }, 4000
     );
+
     const date = new Date();
     setTimeout(
       () => {
