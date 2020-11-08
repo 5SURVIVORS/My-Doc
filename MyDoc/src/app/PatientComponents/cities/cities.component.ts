@@ -24,7 +24,7 @@ cities: any = [
 ];
 
 obj = {city : ""}
-Doc:any;
+@Input() Doc:any;
 //function that handle the selected city in the radio and return it's value 
 radioChangeHandler(event:any){
 
@@ -74,9 +74,7 @@ radioChangeHandler(event:any){
     let city = this.selectedCity;
     this.obj.city = this.selectedCity
     console.log(city)
-    
-    this.profileService.getDoc(this.obj).subscribe(data => {this.Doc = data} )
-    console.log(this.Doc)
+    this.router.navigate(['filter'])
       
    }
 
