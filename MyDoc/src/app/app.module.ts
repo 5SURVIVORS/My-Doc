@@ -36,6 +36,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
 import { CoronaTestComponent } from './corona-test/corona-test.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { CoronaComponent } from './corona/corona.component';
 
 
 
@@ -64,7 +65,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     HomeComponent,
     SignUpComponent,
     CoronaTestComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    CoronaComponent
   ],
   imports: [
     HttpClientModule,
