@@ -38,6 +38,7 @@ import { CoronaTestComponent } from './corona-test/corona-test.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { FilterCityComponent } from './PatientComponents/filter-city/filter-city.component';
 import { LoopComponent } from './PatientComponents/loop/loop.component';
+import { AdminViewComponent } from './AdminComponents/admin-view/admin-view.component';
 
 
 
@@ -68,7 +69,8 @@ import { LoopComponent } from './PatientComponents/loop/loop.component';
     CoronaTestComponent,
     AboutUsComponent,
     FilterCityComponent,
-    LoopComponent
+    LoopComponent,
+    AdminViewComponent
   ],
   imports: [
     HttpClientModule,
