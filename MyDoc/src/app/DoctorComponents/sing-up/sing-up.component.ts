@@ -36,6 +36,6 @@ obj = {name :"",
     this.authDocService.docSingUp(this.obj).subscribe(doctor=>{
       console.log(doctor, 'in submission')
     })
-    this.router.navigate([''])
+    this.router.navigate(['signInDoc'])
 }
 }
