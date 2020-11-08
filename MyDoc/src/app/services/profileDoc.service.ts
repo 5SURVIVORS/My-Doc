@@ -32,7 +32,7 @@ export class ProfileDocService {
         return doc;
     }
 
-    deleteById(obj){
-    return this.http.post('http://localhost:3000/doctors/:id', obj)
+    deleteById(){
+    return this.http.delete('http://localhost:3000/doctors/')
     }
 }

@@ -44,19 +44,18 @@ export class AdminViewComponent implements OnInit {
   DOCTORS: Doctor[];
  obj ={ id : 0};
 
-
-  constructor( private route : ActivatedRoute, private profileDoc : ProfileDocService) { 
+show:boolean = false;
+  constructor( private route : ActivatedRoute,) { 
     // this.refreshDOCTORS();
   }
 
   ngOnInit(): void {
     // const id = this.route.snapshot.params['id'];
   }
-deleteDoc(event: any){
-  this.profileDoc.deleteById(this.obj).subscribe(doctor=>{
-    console.log(doctor, 'delete')
-  })
-}
+
+  deleteByOne(event : any){
+this.show = true ;}
+
   // refreshDOCTORS() {
   //   this.DOCTORS = DOCTORS
   //     .map((Doctor, i) => ({id: i + 1, ...Doctor}))

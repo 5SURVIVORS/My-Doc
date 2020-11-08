@@ -1,5 +1,5 @@
 
-<table class="table table-striped">
+<table *ngIf="show === false"class="table table-striped">
     <thead>
     <tr>
       <th scope="col">#</th>
@@ -17,7 +17,7 @@
       <td>{{ category }} </td>
       
       <td>{{  price  }} </td>
-      <td><button type="reset" value="Reset">Delete</button> </td>
+      <td><button type="reset" value="Reset" (click)="deleteByOne($event)">Delete</button> </td>
       <td><button type="reset" value="Reset">Add</button> </td>
       <td><button type="reset" value="Reset">Update</button> </td>
     </tr>
