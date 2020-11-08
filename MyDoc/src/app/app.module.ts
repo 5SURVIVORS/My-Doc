@@ -101,7 +101,9 @@ import {AgmCoreModule} from '@agm/core';
       { path: 'signUpPat', component: SignUpComponent },
       { path: 'signInPat', component: LogInComponent },
       { path: 'teem', component: AboutUsComponent },
-      {path :'cities', component: CitiesComponent }
+      {path :'cities', component: CitiesComponent },
+      {path :'filter', component: FilterCityComponent }
+
 
     ]),
     NgbModule,
