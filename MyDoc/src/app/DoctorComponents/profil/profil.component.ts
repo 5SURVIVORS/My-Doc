@@ -44,7 +44,7 @@ export class ProfilDocComponent implements OnInit {
         this.isAuth = true;
       }, 4000
     );
-    
+
     const date = new Date();
     setTimeout(
       () => {

@@ -1,0 +1,16 @@
+<div>
+<div class="page-container">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <h1>Choose your city</h1>
+        <input type="text" name="city" class="Name" placeholder="Name" ngModel>
+        <button type="submit" value="Add" name="submit">Submit</button>
+    </form>
+</div>
+<div *ngIf="show === true">
+    <app-loop  *ngFor="let appareil of appareils; let i = index"
+    [name]="appareil.name"
+    [city]="appareil.city"
+    [index]="i" 
+    [id]="appareil.id"></app-loop>
+</div>
+</div>

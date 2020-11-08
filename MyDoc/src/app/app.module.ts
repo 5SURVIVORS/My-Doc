@@ -35,6 +35,14 @@ import { AuthDocService } from './services/doc-auth.service'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
 import { CoronaTestComponent } from './corona-test/corona-test.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+
+import { CoronaComponent } from './corona/corona.component';
+
+import { FilterCityComponent } from './PatientComponents/filter-city/filter-city.component';
+import { LoopComponent } from './PatientComponents/loop/loop.component';
+import { AdminViewComponent } from './AdminComponents/admin-view/admin-view.component';
+
 
 
 
@@ -63,7 +71,12 @@ import { CoronaTestComponent } from './corona-test/corona-test.component';
     NavBarComponent,
     HomeComponent,
     SignUpComponent,
-    CoronaTestComponent
+    CoronaTestComponent,
+    AboutUsComponent,
+   CoronaComponent
+    FilterCityComponent,
+    LoopComponent,
+    AdminViewComponent
   ],
   imports: [
     HttpClientModule,
@@ -79,9 +92,12 @@ import { CoronaTestComponent } from './corona-test/corona-test.component';
       { path: 'profilePat', component: ProfilComponent },
       { path: 'auth', component: LoginAdminComponent },
       { path: 'admin', component: AdminComponent },
-      { path: 'coronaPat', component: CoronaTestComponent },
+      { path: 'corona', component: CoronaTestComponent },
       { path: 'signUpPat', component: SignUpComponent },
-      { path: 'signInPat', component: LogInComponent }
+      { path: 'signInPat', component: LogInComponent },
+      { path: 'teem', component: AboutUsComponent },
+      {path :'filter', component: FilterCityComponent }
+
     ]),
     NgbModule,
 
@@ -91,9 +107,7 @@ import { CoronaTestComponent } from './corona-test/corona-test.component';
     ProfileDocService,
     AuthAdminService,
     AuthDocService,
-    
     AuthPatService
-
   ],
   bootstrap: [AppComponent]
 })
