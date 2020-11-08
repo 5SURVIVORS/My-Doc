@@ -2,6 +2,18 @@
 
 
 /*search box css start here*/
+/* .main{
+    width: 95vw;
+    height: 95vh;
+    position: relative;
+} */
+.jumbotron {
+    background-size: cover;
+    position: relative;
+    left: -8em;
+    margin-top: 0em;
+    width:0em;
+   }
 .search-sec{
     padding: 2rem;
 }
