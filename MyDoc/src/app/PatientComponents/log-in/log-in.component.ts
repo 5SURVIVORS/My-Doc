@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthPatService } from '../../services/pat-auth.service';
-import {NgForm} from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-log-in',
@@ -10,8 +10,8 @@ import {NgForm} from '@angular/forms';
 })
 export class LogInComponent implements OnInit {
 
-  constructor(private router: Router, private authPat: AuthPatService ) {
-    
+  constructor(private router: Router, private authPat: AuthPatService) {
+
   }
 
   obj = {
@@ -23,7 +23,7 @@ export class LogInComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.obj.password = form.value['password'];
     this.obj.email = form.value['email'];
-    this.authPat.patSignIn(this.obj).subscribe(doctor=>{
+    this.authPat.patSignIn(this.obj).subscribe(doctor => {
       console.log(doctor, 'in submission')
     })
     this.router.navigate(['profilePat'])
