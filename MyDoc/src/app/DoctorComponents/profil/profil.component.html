@@ -36,4 +36,14 @@
         </div>
     </div>
 </div> -->
-<h3>Profile Doc {{ docProf | async }}</h3>
+    <!-- <h3>Profile Doc {{ docInfo | async }}</h3> -->
+
+<div class="list-group-item">
+    <h4> {{ docInfo.name }} </h4>
+    <h4> {{ docInfo.city }}</h4>
+    <h4> {{ docInfo.phoneNumber}}</h4>
+    <h4> {{ docInfo.email}} </h4>
+    <h4> {{ docInfo.category }}</h4>
+    <h4> {{ docInfo.cabineName }}</h4>
+    <h4> {{ docInfo.price }}</h4>
+</div>

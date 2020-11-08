@@ -1,8 +1,5 @@
 <div *ngIf="show === true">
-<app-admin-view *ngFor="let Doctor of Doctors; let i = index"
-[name]="Doctor.name"
-[category]="Doctor.category"
-[price]="Doctor.price"
-[index]="i" 
-[id]="Doctor.id"></app-admin-view>
+    <app-admin-view *ngFor="let Doctor of Doctors; let i = index" [name]="Doctor.name" [category]="Doctor.category"
+        [price]="Doctor.price" [index]="i" [id]="Doctor.id"></app-admin-view>
+    <button type="reset" value="Reset">Delete All</button>
 </div>

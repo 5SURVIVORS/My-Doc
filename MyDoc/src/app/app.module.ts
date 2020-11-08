@@ -13,7 +13,6 @@ import { RouterModule, Routes } from "@angular/router";
 
 
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './PatientComponents/home-page/home-page.component';
 
 import { LogInComponent } from './PatientComponents/log-in/log-in.component';
 import { ProfilComponent } from './PatientComponents/profil/profil.component';
@@ -55,7 +54,6 @@ import { AdminViewComponent } from './AdminComponents/admin-view/admin-view.comp
   declarations: [
 
     AppComponent,
-    HomePageComponent,
     LogInComponent,
     ProfilComponent,
     MessagesComponent,
@@ -72,10 +70,10 @@ import { AdminViewComponent } from './AdminComponents/admin-view/admin-view.comp
     SignUpComponent,
     CoronaTestComponent,
     AboutUsComponent,
-   CoronaComponent
+    CoronaComponent,
     FilterCityComponent,
     LoopComponent,
-    AdminViewComponent
+    AdminViewComponent,
   ],
   imports: [
     HttpClientModule,
@@ -86,7 +84,6 @@ import { AdminViewComponent } from './AdminComponents/admin-view/admin-view.comp
       { path: 'doctor', component: HomePageDocComponent },
       { path: 'signUpDoc', component: SingUpDocComponent },
       { path: 'signInDoc', component: SingInDocComponent },
-      { path: 'patient', component: HomePageComponent },
       { path: 'profileDoc', component: ProfilDocComponent },
       { path: 'profilePat', component: ProfilComponent },
       { path: 'auth', component: LoginAdminComponent },
@@ -95,7 +92,8 @@ import { AdminViewComponent } from './AdminComponents/admin-view/admin-view.comp
       { path: 'signUpPat', component: SignUpComponent },
       { path: 'signInPat', component: LogInComponent },
       { path: 'teem', component: AboutUsComponent },
-      {path :'filter', component: FilterCityComponent }
+      { path: 'filter', component: FilterCityComponent },
+      { path: 'cities', component: CitiesComponent }
 
     ]),
     NgbModule,
