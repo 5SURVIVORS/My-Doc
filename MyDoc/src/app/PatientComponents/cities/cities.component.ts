@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Router} from '@angular/router';
-import {ProfileService} from '../../services/profile.service'
+import {ProfileService} from '../../services/profile.service';
+import {MapsService} from '../../maps.service';
 
 @Component({
   selector: 'app-cities',
@@ -8,12 +9,16 @@ import {ProfileService} from '../../services/profile.service'
   styleUrls: ['./cities.component.css']
 })
 export class CitiesComponent  {
+lat : string = '';
+lng : string ='';
+location : Object ;
 
   showTunis :boolean = false ;
   showManouba :boolean = false ;
   showAriana :boolean = false ;
   showSousse :boolean = false ;
   selectedCity: string = '';
+
 
 cities: any = [
   'Tunis',
@@ -64,9 +69,16 @@ radioChangeHandler(event:any){
 
 
 
-  constructor( private router: Router, private profileService: ProfileService) {
+  constructor( private router: Router, private profileService: ProfileService, private map : MapsService) {
+      
 
-
+   }
+   ngOnInit(){
+     this.map.getLocation().subscribe(data =>{
+       console.log(data);
+       this.lat= data.latitude;
+       this.lng= data.longitude;
+     })
    }
 
    buttonOnClick(event:any){
@@ -79,8 +91,5 @@ radioChangeHandler(event:any){
    }
 
 
-  ngOnInit() {
-    
-  }
-
+ 
 }
