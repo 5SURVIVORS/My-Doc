@@ -51,6 +51,7 @@ import { AdminViewComponent } from './AdminComponents/admin-view/admin-view.comp
 
 
 
+
 @NgModule({
   declarations: [
 
@@ -72,7 +73,7 @@ import { AdminViewComponent } from './AdminComponents/admin-view/admin-view.comp
     SignUpComponent,
     CoronaTestComponent,
     AboutUsComponent,
-   CoronaComponent
+   CoronaComponent,
     FilterCityComponent,
     LoopComponent,
     AdminViewComponent

@@ -8,12 +8,12 @@ import {ProfileService} from '../../services/profile.service'
   styleUrls: ['./cities.component.css']
 })
 export class CitiesComponent  {
-
   showTunis :boolean = false ;
   showManouba :boolean = false ;
   showAriana :boolean = false ;
   showSousse :boolean = false ;
   selectedCity: string = '';
+
 
 cities: any = [
   'Tunis',
@@ -62,25 +62,18 @@ radioChangeHandler(event:any){
 
 
 
-
-
-  constructor( private router: Router, private profileService: ProfileService) {
-
-
-   }
+  constructor(private router: Router, private profileService: ProfileService) {
+  }
 
    buttonOnClick(event:any){
     console.log('button clicked !');
     let city = this.selectedCity;
     this.obj.city = this.selectedCity
     console.log(city)
-    this.router.navigate(['filter'])
-      
-   }
-
-
-  ngOnInit() {
+    this.router.navigate(['filter'])}
     
-  }
 
-}
+    ngOnInit(): void {
+    }
+  
+  }
