@@ -1,55 +1,8 @@
-
-
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Doctor</th>
-    <th scope="col">Category</th>
-    <th scope="col">Price</th>
-    <th scope="col">Comission</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let doctor of DOCTORS">
-    <th scope="row">{{ doctor.id }}</th>
-    <td>
-      <img [src]=" doctor.flag" class="mr-2" style="width: 20px">
-      {{ doctor.name }}
-    </td>
-    <td>{{ doctor.category }} </td>
-    
-    <td>{{ doctor.price  }} </td>
-    <td>{{ doctor.comission  }} </td>
-    <td><button type="reset" value="Reset">Delete</button> </td>
-    <td><button type="reset" value="Reset">Add</button> </td>
-    <td><button type="reset" value="Reset">Update</button> </td>
-  </tr>
-  </tbody>
-</table>
-
-<div class="d-flex justify-content-between p-2">
-  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshDOCTORS()">
-  </ngb-pagination>
-
-  <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshDOCTORS()">
-    <option [ngValue]="2">2 items per page</option>
-    <option [ngValue]="4">4 items per page</option>
-    <option [ngValue]="6">6 items per page</option>
-  </select>
+<div *ngIf="show === true">
+<app-admin-view *ngFor="let Doctor of Doctors; let i = index"
+[name]="Doctor.name"
+[category]="Doctor.category"
+[price]="Doctor.price"
+[index]="i" 
+[id]="Doctor.id"></app-admin-view>
 </div>
-
-<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-    
-    <ngb-panel>
-      <ng-template ngbPanelTitle>
-        <span>&#9733; <b>Calculate</b> comission &#9733;</span>
-      </ng-template>
-      <ng-template ngbPanelContent>
-       our comission is 40 dt 
-      </ng-template>
-    </ngb-panel>
-    
-  </ngb-accordion>
-  
-
