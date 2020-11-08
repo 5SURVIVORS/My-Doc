@@ -13,6 +13,7 @@ export class ProfilDocComponent implements OnInit {
   model: NgbDateStruct;
   public isCollapsed = false;
   isAuth = false;
+
   docInfo = {
     name: "",
     email: "",
@@ -22,7 +23,6 @@ export class ProfilDocComponent implements OnInit {
     cabineName: "",
     price: 0,
   }
-
 
 
   // @input() docInfo.name: string
@@ -42,7 +42,7 @@ export class ProfilDocComponent implements OnInit {
     const doc = this.fetchDocs()
     setTimeout(
       () => {
-        resolve(this.profileDoc.docProfiles[0].name);
+        resolve(this.profileDoc.profiles[0].name);
       }, 2000
     );;
   });
@@ -71,6 +71,7 @@ export class ProfilDocComponent implements OnInit {
     const docProf = this.fetchDocs()
     setTimeout(
       () => {
+
         resolve(this.profileDoc.docProfiles[0]);
       }, 2000
     );;
