@@ -89,6 +89,7 @@ import { LoopComponent } from './PatientComponents/loop/loop.component';
       { path: 'signInPat', component: LogInComponent },
       { path: 'teem', component: AboutUsComponent },
       {path :'filter', component: FilterCityComponent }
+
     ]),
     NgbModule,
 
