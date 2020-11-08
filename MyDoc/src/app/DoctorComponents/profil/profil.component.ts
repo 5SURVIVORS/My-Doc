@@ -13,16 +13,25 @@ export class ProfilDocComponent implements OnInit {
   model: NgbDateStruct;
   public isCollapsed = false;
   isAuth = false;
-  docData = this.profileDoc.profiles[0];
+
+  docInfo = {
+    name: "",
+    email: "",
+    city: "",
+    phoneNumber: "",
+    category: "",
+    cabineName: "",
+    price: 0,
+  }
 
 
-  // @input() docc.name: string
-  // @input() docc.email: string
-  // @input() docc.city: string
-  // @input() docc.phoneNumber: string
-  // @input() docc.category: string;
-  // @input() docc.cabineName: string;
-  // @input() docc.price: number
+  // @input() docInfo.name: string
+  // @input() docInfo.email: string
+  // @input() docInfo.city: string
+  // @input() docInfo.phoneNumber: string
+  // @input() docInfo.category: string;
+  // @input() docInfo.cabineName: string;
+  // @input() docInfo.price: number
 
   nameDoc = new Promise((resolve, reject) => {
     setTimeout(
@@ -59,10 +68,11 @@ export class ProfilDocComponent implements OnInit {
         this.isAuth = true;
       }, 4000
     );
-    const doc = this.fetchDocs()
+    const docProf = this.fetchDocs()
     setTimeout(
       () => {
-        resolve(JSON.stringify(this.profileDoc.profiles[0]));
+
+        resolve(this.profileDoc.docProfiles[0]);
       }, 2000
     );;
   });
@@ -78,7 +88,8 @@ export class ProfilDocComponent implements OnInit {
     this.profileDoc.getDoc()
     setTimeout(
       () => {
-        console.log(this.profileDoc.profiles);
+        console.log(this.profileDoc.docProfiles);
+        this.docInfo = this.profileDoc.docProfiles[0];
       }, 2000)
   }
 

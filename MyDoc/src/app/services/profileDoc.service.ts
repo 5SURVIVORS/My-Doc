@@ -4,7 +4,9 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class ProfileDocService {
+
     docProfiles: any[];
+ docFilter: any[];
     profiles : any[];
     constructor(private http: HttpClient) { }
 
@@ -35,4 +37,19 @@ export class ProfileDocService {
     deleteById(){
     return this.http.delete('http://localhost:3000/doctors/')
     }
+
+  public getDocByCategory(options) {
+    this.http
+      .post<any[]>('http://localhost:3000/doctors/docstate', options)
+      .subscribe(
+        (response) => {
+          this.docFilter = response;
+          console.log(this.docProfiles)
+        },
+        (error) => {
+          console.log('Erreur ! : ' + error);
+        }
+      );
+  }
+
 }
