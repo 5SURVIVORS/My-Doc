@@ -13,7 +13,7 @@ export class ProfilDocComponent implements OnInit {
   model: NgbDateStruct;
   public isCollapsed = false;
   isAuth = false;
-  docData = this.profileDoc.docProfiles[0];
+  docData = this.profileDoc.profiles[0];
 
 
   // @input() docc.name: string
@@ -33,7 +33,7 @@ export class ProfilDocComponent implements OnInit {
     const doc = this.fetchDocs()
     setTimeout(
       () => {
-        resolve(this.profileDoc.docProfiles[0].name);
+        resolve(this.profileDoc.profiles[0].name);
       }, 2000
     );;
   });
@@ -62,7 +62,7 @@ export class ProfilDocComponent implements OnInit {
     const doc = this.fetchDocs()
     setTimeout(
       () => {
-        resolve(JSON.stringify(this.profileDoc.docProfiles[0]));
+        resolve(JSON.stringify(this.profileDoc.profiles[0]));
       }, 2000
     );;
   });
@@ -78,7 +78,7 @@ export class ProfilDocComponent implements OnInit {
     this.profileDoc.getDoc()
     setTimeout(
       () => {
-        console.log(this.profileDoc.docProfiles);
+        console.log(this.profileDoc.profiles);
       }, 2000)
   }
 

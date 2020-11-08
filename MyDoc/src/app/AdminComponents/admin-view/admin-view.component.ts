@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import {ProfileDocService } from '../../services/profileDoc.service';
+
 interface Doctor {
   id?: number;
   name: string;
@@ -39,16 +42,21 @@ export class AdminViewComponent implements OnInit {
   pageSize = 4;
   collectionSize = DOCTORS.length;
   DOCTORS: Doctor[];
+ obj ={ id : 0};
 
 
-
-  constructor() { 
+  constructor( private route : ActivatedRoute, private profileDoc : ProfileDocService) { 
     // this.refreshDOCTORS();
   }
 
   ngOnInit(): void {
+    // const id = this.route.snapshot.params['id'];
   }
-
+deleteDoc(event: any){
+  this.profileDoc.deleteById(this.obj).subscribe(doctor=>{
+    console.log(doctor, 'delete')
+  })
+}
   // refreshDOCTORS() {
   //   this.DOCTORS = DOCTORS
   //     .map((Doctor, i) => ({id: i + 1, ...Doctor}))
