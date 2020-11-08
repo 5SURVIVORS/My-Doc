@@ -1,0 +1,26 @@
+<div>
+<div class="page-container">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+     
+        <h1>Choose your city</h1>
+    
+        <!-- <input type="text" name="city" class="Name" placeholder="Name" ngModel  > -->
+        <div class="container h-100">
+            <div class="d-flex justify-content-center h-100">
+              <div class="searchbar">
+                <input class="search_input" type="text" name="city" placeholder="Name" ngModel>
+                <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+              </div>
+            </div>
+          </div>
+        <button type="submit" value="Add" name="submit">Submit</button>
+    </form>
+</div>
+<div *ngIf="show === true">
+    <app-loop  *ngFor="let appareil of appareils; let i = index"
+    [name]="appareil.name"
+    [city]="appareil.city"
+    [index]="i" 
+    [id]="appareil.id"></app-loop>
+</div>
+</div>

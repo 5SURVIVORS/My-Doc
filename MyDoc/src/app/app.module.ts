@@ -37,6 +37,15 @@ import { SignUpComponent } from './patientComponents/sign-up/sign-up.component';
 import { CoronaTestComponent } from './corona-test/corona-test.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 
+import { CoronaComponent } from './corona/corona.component';
+
+import { FilterCityComponent } from './PatientComponents/filter-city/filter-city.component';
+import { LoopComponent } from './PatientComponents/loop/loop.component';
+import { AdminViewComponent } from './AdminComponents/admin-view/admin-view.component';
+import {AgmCoreModule} from '@agm/core';
+
+
+
 
 
 
@@ -64,9 +73,17 @@ import { AboutUsComponent } from './about-us/about-us.component';
     HomeComponent,
     SignUpComponent,
     CoronaTestComponent,
-    AboutUsComponent
+    AboutUsComponent,
+   CoronaComponent,
+    FilterCityComponent,
+    LoopComponent,
+    AdminViewComponent,
+   
   ],
   imports: [
+    AgmCoreModule.forRoot({
+      apiKey:"AIzaSyDeGVs2-huRD24Jcrftsxu_2khOnc5pyIM"
+    }),
     HttpClientModule,
     BrowserModule,
     FormsModule,
@@ -84,7 +101,10 @@ import { AboutUsComponent } from './about-us/about-us.component';
       { path: 'signUpPat', component: SignUpComponent },
       { path: 'signInPat', component: LogInComponent },
       { path: 'teem', component: AboutUsComponent },
-      { path: 'admin', component: AdminComponent },
+      {path :'cities', component: CitiesComponent },
+      {path :'filter', component: FilterCityComponent }
+
+
     ]),
     NgbModule,
 
@@ -94,9 +114,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     ProfileDocService,
     AuthAdminService,
     AuthDocService,
-    
     AuthPatService
-
   ],
   bootstrap: [AppComponent]
 })
