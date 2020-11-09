@@ -1,39 +1,32 @@
 <!-- // static cities type boxes || buttons  warning : YOU SHOULD GET THE VALUE OF THAT CITY 
 // because we gonna need it to filter from our database the category of the doctor who exist in that city    -->
 <article id='container'>
-<p><span>Please select your city !</span></p>
+    <p><span>Please select your city !</span></p>
 
 
-<div id='city' *ngFor="let city of cities">
-    <input
-    type="radio"
-    name="one city"
-    value="{{city}}"
-    (change)="radioChangeHandler($event)">
-    <i>{{city}}</i>
-</div>
+    <div id='city' *ngFor="let city of cities">
+        <input type="radio" name="one city" value="{{city}}" (change)="radioChangeHandler($event)">
+        <i>{{city}}</i>
+    </div>
 
-<!--check if the value of the selected city is appearing-->
-<p ><span>You selected:</span><b><span>{{selectedCity}}</span></b></p>
+    <!--check if the value of the selected city is appearing-->
+    <p><span>You selected:</span><b><span>{{selectedCity}}</span></b></p>
 
-<button class="btn btn-primary active" (click)="buttonOnClick($event)">Submit</button>
+    <button class="btn btn-primary active" (click)="buttonOnClick($event)">Submit</button>
 
-<div>
-<!--mapping the doctors data from the database according to the selcted city-->
-</div>
+    <div>
+        <!--mapping the doctors data from the database according to the selcted city-->
+    </div>
 
 </article>
 
 
 
 
-<agm-map [latitude]="36.8688529" [longitude]="10.1353404">
+<!-- <agm-map [latitude]="36.8688529" [longitude]="10.1353404">
     <agm-marker *ngIf="showTunis === true" [latitude]="36.8688529" [longitude]="10.1353404"></agm-marker>
     <agm-marker *ngIf="showManouba === true" [latitude]="36.8098832" [longitude]="10.0601505"></agm-marker>
     <agm-marker *ngIf="showAriana === true" [latitude]="36.8688529" [longitude]="10.1353404"></agm-marker>
     <agm-marker *ngIf="showSousse === true" [latitude]="35.8283295" [longitude]="10.5830348"></agm-marker>
    
-</agm-map>
-
-
-
+</agm-map> -->

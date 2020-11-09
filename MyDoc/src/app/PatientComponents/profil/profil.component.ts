@@ -25,6 +25,17 @@ export class ProfilComponent implements OnInit {
     this.City = event.target.value;
   }
 
+  clicked() {
+    // let output = [];
+    // let na = "";
+    // for (let i = 0; i < this.profileService.profiles.length; i++) {
+    //   for (let j = 0; j < this.profileService.profiles[i].length; i++) {
+    //     output.push(this.profileService.profiles[j]["name"])
+    alert(" Will receive a notification wait for his response")
+  }
+  // }
+  // }
+
   onCl() {
     this.profileService.getDocByCategory({ docType: this.Category, city: this.City }).subscribe((doc) => { this.Info = doc; }
     )

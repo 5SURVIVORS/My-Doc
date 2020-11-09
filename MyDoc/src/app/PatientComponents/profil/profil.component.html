@@ -1,17 +1,19 @@
-<h1>hello</h1>
+<h1>Hello </h1>
+<!-- {{ namePat | async }} -->
 <h4> Click to Check the doctors in the <span routerLink='/cities'>city</span> </h4>
 <a href="#">notifications<span class="badge">4</span></a>
 <input type="text" (change)="onSearchCategory($event)">
 <input type="text" (change)="onSearchCity($event)">
 <button (click)="onCl()">search</button>
 <div *ngFor="let doc of Info">
-    <h4> {{ doc.name }} </h4>
-    <h4> {{ doc.city }}</h4>
-    <h4>{{ doc.phoneNumber}}</h4>
-    <h4> {{ doc.email}} </h4>
-    <h4> {{ doc.category }}</h4>
-    <h4> {{ doc.cabineName }}</h4>
-    <h4> {{ doc.price }}</h4>
+    <td> {{ docInfo.name  }} </td>
+    <td> {{ docInfo.city }}</td>
+    <td> {{ docInfo.phoneNumber}}</td>
+    <td> {{ docInfo.email}} </td>
+    <td> {{ docInfo.category }}</td>
+    <td> {{ docInfo.cabineName }}</td>
+    <td> {{ docInfo.price }}</td>
+    <button class="btn btn-warning" (click)="clicked()">Contact Doctor {{ doc.name }}</button>
 </div>
 <!-- render informations of the user 
  appointment render 
@@ -19,4 +21,32 @@
  NAVBAR : messages , Book an oppoinment ${dropDown} = type of doctors 
 
  Alex  -->
- <app-cities></app-cities>
+
+<!-- <div class="container-fluid">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>PhoneNumber</th>
+                <th>Email</th>
+                <th>Category</th>
+                <th>CabineName</th>
+                <th>Price</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let doc of Info">
+                <td> {{ docInfo.name  }} </td>
+                <td> {{ docInfo.city }}</td>
+                <td> {{ docInfo.phoneNumber}}</td>
+                <td> {{ docInfo.email}} </td>
+                <td> {{ docInfo.category }}</td>
+                <td> {{ docInfo.cabineName }}</td>
+                <td> {{ docInfo.price }}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div> -->

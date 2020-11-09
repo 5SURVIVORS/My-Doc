@@ -40,8 +40,6 @@ import { CoronaComponent } from './corona/corona.component';
 import { FilterCityComponent } from './PatientComponents/filter-city/filter-city.component';
 import { LoopComponent } from './PatientComponents/loop/loop.component';
 import { AdminViewComponent } from './AdminComponents/admin-view/admin-view.component';
-import {AgmCoreModule} from '@agm/core';
-
 
 
 
@@ -53,6 +51,7 @@ import {AgmCoreModule} from '@agm/core';
 
 @NgModule({
   declarations: [
+
     AppComponent,
     LogInComponent,
     ProfilComponent,
@@ -72,12 +71,9 @@ import {AgmCoreModule} from '@agm/core';
     CoronaComponent,
     FilterCityComponent,
     LoopComponent,
-    AdminViewComponent
+    AdminViewComponent,
   ],
   imports: [
-    AgmCoreModule.forRoot({
-      apiKey:"AIzaSyDeGVs2-huRD24Jcrftsxu_2khOnc5pyIM"
-    }),
     HttpClientModule,
     BrowserModule,
     FormsModule,
@@ -86,6 +82,7 @@ import {AgmCoreModule} from '@agm/core';
       { path: 'signUpDoc', component: SingUpDocComponent },
       { path: 'signInDoc', component: SingInDocComponent },
       { path: 'profileDoc', component: ProfilDocComponent },
+      { path: 'profilePat', component: ProfilComponent },
       { path: 'auth', component: LoginAdminComponent },
       { path: 'admin', component: AdminComponent },
       { path: 'corona', component: CoronaTestComponent },
