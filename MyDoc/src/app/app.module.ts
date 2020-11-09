@@ -20,7 +20,6 @@ import { MessagesComponent } from './PatientComponents/messages/messages.compone
 import { AdminComponent } from './AdminComponents/admin/admin.component';
 import { CitiesComponent } from './PatientComponents/cities/cities.component';
 import { AuthAdminService } from './services/auth.admin.service';
-import { HomePageDocComponent } from './DoctorComponents/home-page-doc/home-page-doc.component';
 import { MessagesDocComponent } from './DoctorComponents/messages/messages.component';
 import { ProfilDocComponent } from './DoctorComponents/profil/profil.component';
 import { SingInDocComponent } from './DoctorComponents/sing-in/sing-in.component';
@@ -59,7 +58,6 @@ import { AdminViewComponent } from './AdminComponents/admin-view/admin-view.comp
     MessagesComponent,
     AdminComponent,
     CitiesComponent,
-    HomePageDocComponent,
     MessagesDocComponent,
     ProfilDocComponent,
     SingInDocComponent,
@@ -81,11 +79,9 @@ import { AdminViewComponent } from './AdminComponents/admin-view/admin-view.comp
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
-      { path: 'doctor', component: HomePageDocComponent },
       { path: 'signUpDoc', component: SingUpDocComponent },
       { path: 'signInDoc', component: SingInDocComponent },
       { path: 'profileDoc', component: ProfilDocComponent },
-      { path: 'profilePat', component: ProfilComponent },
       { path: 'auth', component: LoginAdminComponent },
       { path: 'admin', component: AdminComponent },
       { path: 'corona', component: CoronaTestComponent },
