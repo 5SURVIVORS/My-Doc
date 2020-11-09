@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NgForm} from '@angular/forms'
+import { NgForm } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthDocService } from '../../services/doc-auth.service';
 
@@ -12,7 +12,7 @@ import { AuthDocService } from '../../services/doc-auth.service';
 })
 export class SingInDocComponent implements OnInit {
 
-  constructor(private router: Router,private authDocService : AuthDocService) {
+  constructor(private router: Router, private authDocService: AuthDocService) {
     // private authDoc: AuthDocService, Commented it for now because it give us an error that will not render the component also for line 34 ** Alex
 
   }
@@ -25,10 +25,10 @@ export class SingInDocComponent implements OnInit {
   onChangeRouter(form: NgForm) {
     this.obj.password = form.value['password'];
     this.obj.email = form.value['email'];
-    this.router.navigate(['doctor'])
+    this.router.navigate(['profileDoc'])
     console.log(this.obj)
-    this.authDocService.docSignIn(this.obj).subscribe(doctor=>{
-      
+    this.authDocService.docSignIn(this.obj).subscribe(doctor => {
+
       console.log(doctor)
     })
 

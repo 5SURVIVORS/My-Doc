@@ -20,7 +20,6 @@ import { MessagesComponent } from './PatientComponents/messages/messages.compone
 import { AdminComponent } from './AdminComponents/admin/admin.component';
 import { CitiesComponent } from './PatientComponents/cities/cities.component';
 import { AuthAdminService } from './services/auth.admin.service';
-import { HomePageDocComponent } from './DoctorComponents/home-page-doc/home-page-doc.component';
 import { MessagesDocComponent } from './DoctorComponents/messages/messages.component';
 import { ProfilDocComponent } from './DoctorComponents/profil/profil.component';
 import { SingInDocComponent } from './DoctorComponents/sing-in/sing-in.component';
@@ -41,8 +40,6 @@ import { CoronaComponent } from './corona/corona.component';
 import { FilterCityComponent } from './PatientComponents/filter-city/filter-city.component';
 import { LoopComponent } from './PatientComponents/loop/loop.component';
 import { AdminViewComponent } from './AdminComponents/admin-view/admin-view.component';
-import {AgmCoreModule} from '@agm/core';
-
 
 
 
@@ -54,13 +51,13 @@ import {AgmCoreModule} from '@agm/core';
 
 @NgModule({
   declarations: [
+
     AppComponent,
     LogInComponent,
     ProfilComponent,
     MessagesComponent,
     AdminComponent,
     CitiesComponent,
-    HomePageDocComponent,
     MessagesDocComponent,
     ProfilDocComponent,
     SingInDocComponent,
@@ -74,18 +71,14 @@ import {AgmCoreModule} from '@agm/core';
     CoronaComponent,
     FilterCityComponent,
     LoopComponent,
-    AdminViewComponent
+    AdminViewComponent,
   ],
   imports: [
-    AgmCoreModule.forRoot({
-      apiKey:"AIzaSyDeGVs2-huRD24Jcrftsxu_2khOnc5pyIM"
-    }),
     HttpClientModule,
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
-      { path: 'doctor', component: HomePageDocComponent },
       { path: 'signUpDoc', component: SingUpDocComponent },
       { path: 'signInDoc', component: SingInDocComponent },
       { path: 'profileDoc', component: ProfilDocComponent },
@@ -97,7 +90,8 @@ import {AgmCoreModule} from '@agm/core';
       { path: 'signInPat', component: LogInComponent },
       { path: 'teem', component: AboutUsComponent },
       { path: 'filter', component: FilterCityComponent },
-      { path: 'cities', component: CitiesComponent }
+      { path: 'cities', component: CitiesComponent },
+      { path: 'messages', component: MessagesComponent },
 
     ]),
     NgbModule,
