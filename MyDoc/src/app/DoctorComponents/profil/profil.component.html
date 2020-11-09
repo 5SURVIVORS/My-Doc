@@ -1,6 +1,6 @@
 <div class="jumbotron text-center bg-warning">
     <h1>Doctor {{ nameDoc | async }} </h1>
-    <p> Date of the day is {{ lastUpdate | async | date: 'y MMMM EEEE d' | uppercase }}</p>
+    <p> Today is {{ lastUpdate | async | date: 'y MMMM EEEE d' | uppercase }}</p>
 </div>
 
 <button class="btn btn-outline-info" data-target="#cla" data-toggle="collapse">Click to Open your Agenda</button>

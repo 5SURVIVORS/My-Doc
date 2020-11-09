@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from 'src/app/services/profile.service';
 import { Observable } from 'rxjs';
+import { promise } from 'protractor';
 // import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 
 @Component({
@@ -9,14 +10,47 @@ import { Observable } from 'rxjs';
   styleUrls: ['./profil.component.css']
 })
 export class ProfilComponent implements OnInit {
+  isAuth = false;
   profiles: any[];
   Info;
   Category;
   City;
 
+  // namePat = new Promise((resolve, reject) => {
+  //   setTimeout(
+  //     () => {
+  //       this.isAuth = true;
+  //     }, 4000
+  //   );
+  //   const doc = this.fetchDocs()
+  //   setTimeout(
+  //     () => {
+  //       resolve(this.profileDoc.docProfiles[0].name);
+  //     }, 2000
+  //   );;
+  // });
+
+  notifications = new Promise((resolve, reject) => {
+    setTimeout(
+      () => {
+        this.isAuth = true;
+      }, 4000
+    );
+    const doc = this.randomNumber()
+    setTimeout(
+      () => {
+        resolve(doc);
+      }, 2000
+    );;
+  });
   constructor(private profileService: ProfileService) { }
   ngOnInit(): void {
     this.profiles = this.profileService.profiles;
+  }
+
+  randomNumber() {
+    let result;
+    return result = Math.ceil(Math.random() * 10);
   }
   onSearchCategory(event) {
     this.Category = event.target.value;
