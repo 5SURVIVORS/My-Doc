@@ -90,7 +90,8 @@ import { AdminViewComponent } from './AdminComponents/admin-view/admin-view.comp
       { path: 'signInPat', component: LogInComponent },
       { path: 'teem', component: AboutUsComponent },
       { path: 'filter', component: FilterCityComponent },
-      { path: 'cities', component: CitiesComponent }
+      { path: 'cities', component: CitiesComponent },
+      { path: 'messages', component: MessagesComponent },
 
     ]),
     NgbModule,
