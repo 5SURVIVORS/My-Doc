@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ProfileDocService } from 'src/app/services/profileDoc.service'
 
-import {ProfileDocService } from '../../services/profileDoc.service';
 
 @Component({ 
   selector: 'app-admin',
@@ -37,6 +37,11 @@ export class AdminComponent implements OnInit {
    this.profileDoc.getDoc();
 }
 
-
+deleteDoc(event){
+  this.show = false;
+  this.profileDoc.deleteById().subscribe(doctor=>{
+    console.log(doctor, 'delete')
+  })
+}
  
 }

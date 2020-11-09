@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //declare input and loop with ngfor to append the data in the dom
 import { ProfileDocService } from 'src/app/services/profileDoc.service'
-import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { promise } from 'protractor';
 
 @Component({
@@ -10,7 +10,8 @@ import { promise } from 'protractor';
   styleUrls: ['./profil.component.css']
 })
 export class ProfilDocComponent implements OnInit {
-  model: NgbDateStruct;
+  Notifications: "No Client for this day";
+  //add info of patients
   public isCollapsed = false;
   isAuth = false;
   docInfo = {
@@ -22,7 +23,6 @@ export class ProfilDocComponent implements OnInit {
     cabineName: "",
     price: 0,
   }
-
 
 
   // @input() docInfo.name: string

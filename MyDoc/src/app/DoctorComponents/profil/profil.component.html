@@ -1,23 +1,29 @@
-<h1>Doctor {{ nameDoc | async }} </h1>
+<div class="jumbotron text-center bg-warning">
+    <h1>Doctor {{ nameDoc | async }} </h1>
+    <p> Today is {{ lastUpdate | async | date: 'y MMMM EEEE d' | uppercase }}</p>
+</div>
 
-<h1> Date of the day is {{ lastUpdate | async | date: 'y MMMM EEEE d' | uppercase }}</h1>
+<button class="btn btn-outline-info" data-target="#cla" data-toggle="collapse">Click to Open your Agenda</button>
+<div id="cla" class="collapse">
+    <h4> check for appointment</h4>
 
-<h4> check for appointment</h4>
-<form class="form-inline">
-    <div class="form-group">
-        <div class="input-group">
-            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
-                #d="ngbDatepicker">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+    <form class="form-inline">
+        <div class="form-group">
+            <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="Notifications" ngbDatepicker
+                    #d="ngbDatepicker">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>
 
 <hr />
-<!-- <pre>Model: {{ model | json }}</pre> -->
-
+<pre>Notifications: {{ Notifications | json }}</pre>
+<!-- <div class="alert alert-danger fade in"><a href="#" class="close" data-dismiss="alert" aria-label="Close">&times;</a>ggg
+</div> -->
 <ngb-alert class="fadeIn first" class="mt-3 mb-0" type="info" [dismissible]="false">
     Our society needs more heroes who are scientists, researchers, and engineers. We need to celebrate and reward the
     people who cure diseases, expand our understanding of humanity and work to improve people’s lives.
@@ -38,12 +44,31 @@
 </div> -->
     <!-- <h3>Profile Doc {{ docInfo | async }}</h3> -->
 
-<div class="list-group-item">
-    <h4> {{ docInfo.name }} </h4>
-    <h4> {{ docInfo.city }}</h4>
-    <h4> {{ docInfo.phoneNumber}}</h4>
-    <h4> {{ docInfo.email}} </h4>
-    <h4> {{ docInfo.category }}</h4>
-    <h4> {{ docInfo.cabineName }}</h4>
-    <h4> {{ docInfo.price }}</h4>
+<div class="container-fluid">
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr class=" bg-warning">
+                <th>Name</th>
+                <th>City</th>
+                <th>PhoneNumber</th>
+                <th>Email</th>
+                <th>Category</th>
+                <th>CabineName</th>
+                <th>Price</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr class=" bg-info">
+                <td> {{ docInfo.name  }} </td>
+                <td> {{ docInfo.city }}</td>
+                <td> {{ docInfo.phoneNumber}}</td>
+                <td> {{ docInfo.email}} </td>
+                <td> {{ docInfo.category }}</td>
+                <td> {{ docInfo.cabineName }}</td>
+                <td> {{ docInfo.price }}</td>
+
+            </tr>
+        </tbody>
+    </table>
 </div>
