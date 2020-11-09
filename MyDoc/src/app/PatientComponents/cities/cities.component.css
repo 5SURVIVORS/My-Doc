@@ -12,3 +12,8 @@
     height:450px;
     
 }
+
+/* map with api css */
+agm-map{
+    height:300px;
+}

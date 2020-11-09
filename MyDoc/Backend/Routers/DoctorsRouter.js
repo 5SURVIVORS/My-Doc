@@ -149,7 +149,7 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
 
-    await Doctors.findByPk(req.params.id).then((doctors) => {
+    await Doctors.findAll({where:{id:req.body.id}}).then((doctors) => {
         doctors.destroy();
     }).then(() => {
         res.json("deleted");
